@@ -39,6 +39,14 @@ npm run prepare-data
 # or: python3 scripts/prepare_dataset.py
 ```
 
+For **GitHub / Vercel** (smaller repo, avoids push errors), use one image per tank:
+
+```bash
+npm run prepare-data:deploy
+```
+
+See [docs/GITHUB_PUSH.md](docs/GITHUB_PUSH.md) if `git push` fails with HTTP 400.
+
 ### 3. Run the dev server
 
 ```bash
@@ -47,6 +55,18 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Mobile app (iOS & Android)
+
+This project includes [Capacitor](https://capacitorjs.com/) to wrap the site as native apps.
+
+```bash
+npm run cap:sync      # build static web app + sync to native projects
+npm run cap:ios       # open in Xcode
+npm run cap:android   # open in Android Studio
+```
+
+See [docs/MOBILE.md](docs/MOBILE.md) for prerequisites, signing, and store builds.
+
 ## Scripts
 
 | Command | Description |
@@ -54,6 +74,9 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run dev` | Start Next.js dev server |
 | `npm run build` | Production build |
 | `npm run prepare-data` | Download Kaggle data and regenerate `tanks.json` |
+| `npm run build:mobile` | Static export for Capacitor (`out/`) |
+| `npm run cap:sync` | Build mobile web bundle and sync native projects |
+| `npm run cap:ios` / `cap:android` | Open native IDE |
 
 ## Data notes
 

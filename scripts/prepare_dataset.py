@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import shutil
@@ -260,6 +261,14 @@ def infer_specs(slug: str) -> dict:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Prepare tank images and tanks.json")
+    parser.add_argument(
+        "--thumbnails-only",
+        action="store_true",
+        help="Copy only one image per tank (~30MB). Recommended for GitHub/Vercel without Git LFS.",
+    )
+    args = parser.parse_args()
+
     print("Downloading dataset via kagglehub...")
     dataset_path = Path(kagglehub.dataset_download("antoreepjana/military-tanks-dataset-images"))
     images_root = dataset_path / "images"
@@ -279,9 +288,15 @@ def main() -> None:
         dest_dir.mkdir(parents=True)
 
         image_files: list[str] = []
-        for src in sorted(slug_dir.iterdir()):
-            if src.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp", ".gif"}:
-                continue
+        sources = sorted(
+            p
+            for p in slug_dir.iterdir()
+            if p.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp", ".gif"}
+        )
+        if args.thumbnails_only and sources:
+            sources = sources[:1]
+
+        for src in sources:
             dest_name = src.name
             shutil.copy2(src, dest_dir / dest_name)
             image_files.append(f"/tanks/{slug}/{dest_name}")
@@ -305,7 +320,8 @@ def main() -> None:
     with DATA_FILE.open("w", encoding="utf-8") as f:
         json.dump({"tanks": tanks, "generatedFrom": "antoreepjana/military-tanks-dataset-images"}, f, indent=2)
 
-    print(f"Prepared {len(tanks)} tanks -> {DATA_FILE}")
+    mode = "thumbnails only" if args.thumbnails_only else "all images"
+    print(f"Prepared {len(tanks)} tanks ({mode}) -> {DATA_FILE}")
     print(f"Images copied to {PUBLIC_TANKS}")
 
 

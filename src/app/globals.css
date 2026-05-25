@@ -68,3 +68,9 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+@supports (-webkit-touch-callout: none) {
+  .native-app {
+    min-height: -webkit-fill-available;
+  }
+}

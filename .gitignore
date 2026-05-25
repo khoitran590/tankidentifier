@@ -17,6 +17,14 @@
 /.next/
 /out/
 
+# capacitor native build artifacts
+android/app/build/
+android/.gradle/
+android/local.properties
+ios/App/build/
+ios/DerivedData/
+*.xcuserstate
+
 # production
 /build
 

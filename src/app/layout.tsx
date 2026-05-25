@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { CapacitorBridge } from "@/components/CapacitorBridge";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -23,6 +24,21 @@ export const metadata: Metadata = {
     icon: "/logo.png",
     apple: "/logo.png",
   },
+  appleWebApp: {
+    capable: true,
+    title: "Tank Identifier",
+    statusBarStyle: "black-translucent",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafaf9" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
+  ],
 };
 
 export default function RootLayout({
@@ -36,10 +52,13 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body className="native-app flex min-h-full flex-col bg-background text-foreground">
         <ThemeProvider>
+          <CapacitorBridge />
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-[env(safe-area-inset-bottom)]">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
