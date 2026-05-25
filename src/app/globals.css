@@ -74,3 +74,10 @@ body {
     min-height: -webkit-fill-available;
   }
 }
+
+/* Installed PWA (Add to Home Screen) */
+@media (display-mode: standalone) {
+  .native-app header {
+    padding-top: max(env(safe-area-inset-top), 0.5rem);
+  }
+}

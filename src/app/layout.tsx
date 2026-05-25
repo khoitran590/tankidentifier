@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { CapacitorBridge } from "@/components/CapacitorBridge";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     title: "Tank Identifier",
     statusBarStyle: "black-translucent",
   },
+  applicationName: "Tank Identifier",
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export const viewport: Viewport = {
@@ -54,7 +58,7 @@ export default function RootLayout({
     >
       <body className="native-app flex min-h-full flex-col bg-background text-foreground">
         <ThemeProvider>
-          <CapacitorBridge />
+          <PwaInstallPrompt />
           <Header />
           <main className="flex-1 pb-[env(safe-area-inset-bottom)]">
             {children}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PwaInstallFooterLink } from "@/components/PwaInstallPrompt";
 import { MAIN_NAV } from "@/lib/navigation";
 
 export function Footer() {
@@ -46,6 +47,8 @@ export function Footer() {
           </a>
           {" · "}
           Specs are approximate reference values for comparison
+          {" · "}
+          <PwaInstallFooterLink />
         </p>
       </div>
     </footer>
