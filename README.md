@@ -67,6 +67,16 @@ npm run cap:android   # open in Android Studio
 
 See [docs/MOBILE.md](docs/MOBILE.md) for prerequisites, signing, and store builds.
 
+### Cloud builds (Codemagic)
+
+```bash
+git add codemagic.yaml && git commit -m "Add Codemagic CI" && git push
+```
+
+Then in Codemagic: select branch → **Check for configuration file** → run **Tank Identifier Android (Debug APK)**.
+
+Full guide: [docs/CODEMAGIC.md](docs/CODEMAGIC.md)
+
 ## Scripts
 
 | Command | Description |

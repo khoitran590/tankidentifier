@@ -1,0 +1,135 @@
+# Tank Identifier — Capacitor (Next.js) CI/CD
+# Codemagic docs: https://docs.codemagic.io/yaml-quick-start/building-an-ionic-app/
+# After pushing this file: Codemagic UI → select branch → "Check for configuration file"
+
+workflows:
+  # --- Android (start here: no code signing required) ---
+  tank-identifier-android-debug:
+    name: Tank Identifier Android (Debug APK)
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      vars:
+        PACKAGE_NAME: "com.tankidentifier.app"
+      node: 20
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+        - pattern: master
+          include: true
+    scripts:
+      - name: Set Android SDK location
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Install npm dependencies
+        script: npm ci
+      - name: Build Next.js static export for Capacitor
+        script: npm run build:mobile
+      - name: Sync web assets to Android
+        script: npx cap sync android
+      - name: Build debug APK
+        script: |
+          cd android
+          ./gradlew assembleDebug
+    artifacts:
+      - android/app/build/outputs/apk/debug/*.apk
+    publishing:
+      email:
+        recipients:
+          - user@example.com # TODO: replace with your email in Codemagic or here
+        notify:
+          success: true
+          failure: true
+
+  # --- Android release (enable after uploading keystore in Codemagic) ---
+  tank-identifier-android-release:
+    name: Tank Identifier Android (Release AAB)
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      # android_signing:
+      #   - tank_identifier_keystore   # Reference name from Codemagic → Code signing identities
+      vars:
+        PACKAGE_NAME: "com.tankidentifier.app"
+      node: 20
+    scripts:
+      - name: Set Android SDK location
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Install npm dependencies
+        script: npm ci
+      - name: Build Next.js static export for Capacitor
+        script: npm run build:mobile
+      - name: Sync web assets to Android
+        script: npx cap sync android
+      - name: Build release AAB
+        script: |
+          cd android
+          ./gradlew bundleRelease \
+            -PversionCode=$BUILD_NUMBER \
+            -PversionName=1.0.$BUILD_NUMBER
+    artifacts:
+      - android/app/build/outputs/bundle/release/*.aab
+    publishing:
+      email:
+        recipients:
+          - user@example.com # TODO: replace with your email in Codemagic or here
+        notify:
+          success: true
+          failure: true
+
+  # --- iOS (requires code signing in Codemagic Team settings) ---
+  tank-identifier-ios:
+    name: Tank Identifier iOS
+    max_build_duration: 90
+    instance_type: mac_mini_m2
+    integrations:
+      # Create in Codemagic: Team integrations → Developer Portal → App Store Connect API key
+      app_store_connect: codemagic # TODO: rename to your API key integration name
+    environment:
+      ios_signing:
+        distribution_type: development # use app_store for TestFlight / App Store
+        bundle_identifier: com.tankidentifier.app
+      vars:
+        XCODE_PROJECT: "App.xcodeproj"
+        XCODE_SCHEME: "App"
+        APP_STORE_APP_ID: 0 # TODO: App Store Connect → App → General → Apple ID (numeric)
+      node: 20
+      xcode: latest
+    scripts:
+      - name: Install npm dependencies
+        script: npm ci
+      - name: Build Next.js static export for Capacitor
+        script: npm run build:mobile
+      - name: Sync web assets to iOS
+        script: npx cap sync ios
+      - name: Set up code signing on Xcode project
+        script: xcode-project use-profiles
+      - name: Increment build number
+        script: |
+          cd "$CM_BUILD_DIR/ios/App"
+          agvtool new-version -all "$(($BUILD_NUMBER))"
+          agvtool new-marketing-version "1.0.$(($BUILD_NUMBER))"
+      - name: Build IPA
+        script: |
+          cd "$CM_BUILD_DIR/ios/App"
+          xcode-project build-ipa \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - ios/App/build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      email:
+        recipients:
+          - user@example.com # TODO: replace with your email in Codemagic or here
+        notify:
+          success: true
+          failure: true
+      # Uncomment after App Store Connect is configured:
+      # app_store_connect:
+      #   auth: integration
+      #   submit_to_testflight: false
