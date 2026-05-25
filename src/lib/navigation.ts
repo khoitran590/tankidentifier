@@ -8,7 +8,7 @@ export const MAIN_NAV: NavItem[] = [
   {
     href: "/",
     label: "Catalog",
-    description: "Browse all tanks",
+    description: "Tanks and military aircraft",
   },
   {
     href: "/compare",
@@ -19,7 +19,11 @@ export const MAIN_NAV: NavItem[] = [
 
 export function isNavActive(pathname: string, href: string): boolean {
   if (href === "/") {
-    return pathname === "/" || pathname.startsWith("/tanks/");
+    return (
+      pathname === "/" ||
+      pathname.startsWith("/tanks/") ||
+      pathname.startsWith("/aircraft/")
+    );
   }
   return pathname === href || pathname.startsWith(`${href}/`);
 }

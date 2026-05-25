@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tank Identifier — Military Armor Catalog",
+  title: "Tank Identifier — Military Vehicle Catalog",
   description:
-    "Browse 150+ military tanks with specifications and side-by-side comparison.",
+    "Browse military tanks and aircraft with specifications and side-by-side comparison.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",

@@ -1,0 +1,2004 @@
+{
+  "aircraft": [
+    {
+      "id": "a10",
+      "slug": "a10",
+      "name": "A10",
+      "images": [
+        "/aircraft/a10/a10.jpg"
+      ],
+      "thumbnail": "/aircraft/a10/a10.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Attack aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "a400m",
+      "slug": "a400m",
+      "name": "A400m",
+      "images": [
+        "/aircraft/a400m/a400m.jpg"
+      ],
+      "thumbnail": "/aircraft/a400m/a400m.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "ag600",
+      "slug": "ag600",
+      "name": "Ag600",
+      "images": [
+        "/aircraft/ag600/ag600.jpg"
+      ],
+      "thumbnail": "/aircraft/ag600/ag600.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "ah64",
+      "slug": "ah64",
+      "name": "Ah64",
+      "images": [
+        "/aircraft/ah64/ah64.jpg"
+      ],
+      "thumbnail": "/aircraft/ah64/ah64.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Attack helicopter",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "an124",
+      "slug": "an124",
+      "name": "An124",
+      "images": [
+        "/aircraft/an124/an124.jpg"
+      ],
+      "thumbnail": "/aircraft/an124/an124.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "an22",
+      "slug": "an22",
+      "name": "An22",
+      "images": [
+        "/aircraft/an22/an22.jpg"
+      ],
+      "thumbnail": "/aircraft/an22/an22.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "an225",
+      "slug": "an225",
+      "name": "An225",
+      "images": [
+        "/aircraft/an225/an225.jpg"
+      ],
+      "thumbnail": "/aircraft/an225/an225.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "an72",
+      "slug": "an72",
+      "name": "An72",
+      "images": [
+        "/aircraft/an72/an72.jpg"
+      ],
+      "thumbnail": "/aircraft/an72/an72.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "av8b",
+      "slug": "av8b",
+      "name": "Av8b",
+      "images": [
+        "/aircraft/av8b/av8b.jpg"
+      ],
+      "thumbnail": "/aircraft/av8b/av8b.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "b1",
+      "slug": "b1",
+      "name": "B1",
+      "images": [
+        "/aircraft/b1/b1.jpg"
+      ],
+      "thumbnail": "/aircraft/b1/b1.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "b2",
+      "slug": "b2",
+      "name": "B2",
+      "images": [
+        "/aircraft/b2/b2.jpg"
+      ],
+      "thumbnail": "/aircraft/b2/b2.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Stealth bomber",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "b21",
+      "slug": "b21",
+      "name": "B21",
+      "images": [
+        "/aircraft/b21/b21.jpg"
+      ],
+      "thumbnail": "/aircraft/b21/b21.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Stealth bomber",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "b52",
+      "slug": "b52",
+      "name": "B52",
+      "images": [
+        "/aircraft/b52/b52.jpg"
+      ],
+      "thumbnail": "/aircraft/b52/b52.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Strategic bomber",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "be200",
+      "slug": "be200",
+      "name": "Be200",
+      "images": [
+        "/aircraft/be200/be200.jpg"
+      ],
+      "thumbnail": "/aircraft/be200/be200.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "c130",
+      "slug": "c130",
+      "name": "C130",
+      "images": [
+        "/aircraft/c130/c130.jpg"
+      ],
+      "thumbnail": "/aircraft/c130/c130.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Transport",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "c17",
+      "slug": "c17",
+      "name": "C17",
+      "images": [
+        "/aircraft/c17/c17.jpg"
+      ],
+      "thumbnail": "/aircraft/c17/c17.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "c2",
+      "slug": "c2",
+      "name": "C2",
+      "images": [
+        "/aircraft/c2/c2.jpg"
+      ],
+      "thumbnail": "/aircraft/c2/c2.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "c390",
+      "slug": "c390",
+      "name": "C390",
+      "images": [
+        "/aircraft/c390/c390.jpg"
+      ],
+      "thumbnail": "/aircraft/c390/c390.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "c5",
+      "slug": "c5",
+      "name": "C5",
+      "images": [
+        "/aircraft/c5/c5.jpg"
+      ],
+      "thumbnail": "/aircraft/c5/c5.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "ch47",
+      "slug": "ch47",
+      "name": "Ch47",
+      "images": [
+        "/aircraft/ch47/ch47.jpg"
+      ],
+      "thumbnail": "/aircraft/ch47/ch47.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "cl415",
+      "slug": "cl415",
+      "name": "Cl415",
+      "images": [
+        "/aircraft/cl415/cl415.jpg"
+      ],
+      "thumbnail": "/aircraft/cl415/cl415.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "e2",
+      "slug": "e2",
+      "name": "E2",
+      "images": [
+        "/aircraft/e2/e2.jpg"
+      ],
+      "thumbnail": "/aircraft/e2/e2.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "e7",
+      "slug": "e7",
+      "name": "E7",
+      "images": [
+        "/aircraft/e7/e7.jpg"
+      ],
+      "thumbnail": "/aircraft/e7/e7.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "ef2000",
+      "slug": "ef2000",
+      "name": "Ef2000",
+      "images": [
+        "/aircraft/ef2000/ef2000.jpg"
+      ],
+      "thumbnail": "/aircraft/ef2000/ef2000.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "f117",
+      "slug": "f117",
+      "name": "F117",
+      "images": [
+        "/aircraft/f117/f117.jpg"
+      ],
+      "thumbnail": "/aircraft/f117/f117.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "f14",
+      "slug": "f14",
+      "name": "F14",
+      "images": [
+        "/aircraft/f14/f14.jpg"
+      ],
+      "thumbnail": "/aircraft/f14/f14.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "f15",
+      "slug": "f15",
+      "name": "F15",
+      "images": [
+        "/aircraft/f15/f15.jpg"
+      ],
+      "thumbnail": "/aircraft/f15/f15.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Air superiority fighter",
+        "weight_t": 14.7,
+        "length_m": 19.4,
+        "width_m": 13.1,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1224.49,
+        "max_speed_kmh": 2655,
+        "range_km": 5600,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "f16",
+      "slug": "f16",
+      "name": "F16",
+      "images": [
+        "/aircraft/f16/f16.jpg"
+      ],
+      "thumbnail": "/aircraft/f16/f16.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Multirole fighter",
+        "weight_t": 8.6,
+        "length_m": 15.1,
+        "width_m": 9.8,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "20 mm M61 Vulcan, AIM-120, AIM-9",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 2093.02,
+        "max_speed_kmh": 2120,
+        "range_km": 4220,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "f18",
+      "slug": "f18",
+      "name": "F18",
+      "images": [
+        "/aircraft/f18/f18.jpg"
+      ],
+      "thumbnail": "/aircraft/f18/f18.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Carrier-based multirole fighter",
+        "weight_t": 14.5,
+        "length_m": 18.3,
+        "width_m": 13.6,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1241.38,
+        "max_speed_kmh": 1915,
+        "range_km": 2340,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "f22",
+      "slug": "f22",
+      "name": "F22",
+      "images": [
+        "/aircraft/f22/f22.jpg"
+      ],
+      "thumbnail": "/aircraft/f22/f22.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "f35",
+      "slug": "f35",
+      "name": "F35",
+      "images": [
+        "/aircraft/f35/f35.jpg"
+      ],
+      "thumbnail": "/aircraft/f35/f35.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Stealth multirole fighter",
+        "weight_t": 13.3,
+        "length_m": 15.7,
+        "width_m": 10.7,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "25 mm GAU-22/A (A), internal weapons bays",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1353.38,
+        "max_speed_kmh": 1930,
+        "range_km": 2220,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "f4",
+      "slug": "f4",
+      "name": "F4",
+      "images": [
+        "/aircraft/f4/f4.jpg"
+      ],
+      "thumbnail": "/aircraft/f4/f4.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "h6",
+      "slug": "h6",
+      "name": "H6",
+      "images": [
+        "/aircraft/h6/h6.jpg"
+      ],
+      "thumbnail": "/aircraft/h6/h6.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "j10",
+      "slug": "j10",
+      "name": "J10",
+      "images": [
+        "/aircraft/j10/j10.jpg"
+      ],
+      "thumbnail": "/aircraft/j10/j10.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "j20",
+      "slug": "j20",
+      "name": "J20",
+      "images": [
+        "/aircraft/j20/j20.jpg"
+      ],
+      "thumbnail": "/aircraft/j20/j20.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "jas39",
+      "slug": "jas39",
+      "name": "Jas39",
+      "images": [
+        "/aircraft/jas39/jas39.jpg"
+      ],
+      "thumbnail": "/aircraft/jas39/jas39.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "jf17",
+      "slug": "jf17",
+      "name": "Jf17",
+      "images": [
+        "/aircraft/jf17/jf17.jpg"
+      ],
+      "thumbnail": "/aircraft/jf17/jf17.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "jh7",
+      "slug": "jh7",
+      "name": "Jh7",
+      "images": [
+        "/aircraft/jh7/jh7.jpg"
+      ],
+      "thumbnail": "/aircraft/jh7/jh7.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "ka27",
+      "slug": "ka27",
+      "name": "Ka27",
+      "images": [
+        "/aircraft/ka27/ka27.jpg"
+      ],
+      "thumbnail": "/aircraft/ka27/ka27.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "ka52",
+      "slug": "ka52",
+      "name": "Ka52",
+      "images": [
+        "/aircraft/ka52/ka52.jpg"
+      ],
+      "thumbnail": "/aircraft/ka52/ka52.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "kc135",
+      "slug": "kc135",
+      "name": "Kc135",
+      "images": [
+        "/aircraft/kc135/kc135.jpg"
+      ],
+      "thumbnail": "/aircraft/kc135/kc135.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "kf21",
+      "slug": "kf21",
+      "name": "Kf21",
+      "images": [
+        "/aircraft/kf21/kf21.jpg"
+      ],
+      "thumbnail": "/aircraft/kf21/kf21.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "kj600",
+      "slug": "kj600",
+      "name": "Kj600",
+      "images": [
+        "/aircraft/kj600/kj600.jpg"
+      ],
+      "thumbnail": "/aircraft/kj600/kj600.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "mi24",
+      "slug": "mi24",
+      "name": "Mi24",
+      "images": [
+        "/aircraft/mi24/mi24.jpg"
+      ],
+      "thumbnail": "/aircraft/mi24/mi24.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "mi26",
+      "slug": "mi26",
+      "name": "Mi26",
+      "images": [
+        "/aircraft/mi26/mi26.jpg"
+      ],
+      "thumbnail": "/aircraft/mi26/mi26.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "mi28",
+      "slug": "mi28",
+      "name": "Mi28",
+      "images": [
+        "/aircraft/mi28/mi28.jpg"
+      ],
+      "thumbnail": "/aircraft/mi28/mi28.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "mig29",
+      "slug": "mig29",
+      "name": "Mig29",
+      "images": [
+        "/aircraft/mig29/mig29.jpg"
+      ],
+      "thumbnail": "/aircraft/mig29/mig29.jpg",
+      "specs": {
+        "country": "Russia",
+        "era": "Modern",
+        "type": "Multirole fighter",
+        "weight_t": 11.0,
+        "length_m": 17.4,
+        "width_m": 11.4,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1636.36,
+        "max_speed_kmh": 2445,
+        "range_km": 2100,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "mig31",
+      "slug": "mig31",
+      "name": "Mig31",
+      "images": [
+        "/aircraft/mig31/mig31.jpg"
+      ],
+      "thumbnail": "/aircraft/mig31/mig31.jpg",
+      "specs": {
+        "country": "Russia",
+        "era": "Modern",
+        "type": "Fighter",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "mirage2000",
+      "slug": "mirage2000",
+      "name": "Mirage2000",
+      "images": [
+        "/aircraft/mirage2000/mirage2000.jpg"
+      ],
+      "thumbnail": "/aircraft/mirage2000/mirage2000.jpg",
+      "specs": {
+        "country": "France",
+        "era": "Modern",
+        "type": "Fighter",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "mq9",
+      "slug": "mq9",
+      "name": "Mq9",
+      "images": [
+        "/aircraft/mq9/mq9.jpg"
+      ],
+      "thumbnail": "/aircraft/mq9/mq9.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "p3",
+      "slug": "p3",
+      "name": "P3",
+      "images": [
+        "/aircraft/p3/p3.jpg"
+      ],
+      "thumbnail": "/aircraft/p3/p3.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "rafale",
+      "slug": "rafale",
+      "name": "Rafale",
+      "images": [
+        "/aircraft/rafale/rafale.jpg"
+      ],
+      "thumbnail": "/aircraft/rafale/rafale.jpg",
+      "specs": {
+        "country": "France",
+        "era": "Modern",
+        "type": "Omnirole fighter",
+        "weight_t": 10.3,
+        "length_m": 15.3,
+        "width_m": 10.9,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1747.57,
+        "max_speed_kmh": 1912,
+        "range_km": 3700,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "rq4",
+      "slug": "rq4",
+      "name": "Rq4",
+      "images": [
+        "/aircraft/rq4/rq4.jpg"
+      ],
+      "thumbnail": "/aircraft/rq4/rq4.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "sr71",
+      "slug": "sr71",
+      "name": "Sr71",
+      "images": [
+        "/aircraft/sr71/sr71.jpg"
+      ],
+      "thumbnail": "/aircraft/sr71/sr71.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "su24",
+      "slug": "su24",
+      "name": "Su24",
+      "images": [
+        "/aircraft/su24/su24.jpg"
+      ],
+      "thumbnail": "/aircraft/su24/su24.jpg",
+      "specs": {
+        "country": "Russia",
+        "era": "Modern",
+        "type": "Fighter",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "su25",
+      "slug": "su25",
+      "name": "Su25",
+      "images": [
+        "/aircraft/su25/su25.jpg"
+      ],
+      "thumbnail": "/aircraft/su25/su25.jpg",
+      "specs": {
+        "country": "Russia",
+        "era": "Modern",
+        "type": "Fighter",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "su34",
+      "slug": "su34",
+      "name": "Su34",
+      "images": [
+        "/aircraft/su34/su34.jpg"
+      ],
+      "thumbnail": "/aircraft/su34/su34.jpg",
+      "specs": {
+        "country": "Russia",
+        "era": "Modern",
+        "type": "Fighter",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "su57",
+      "slug": "su57",
+      "name": "Su57",
+      "images": [
+        "/aircraft/su57/su57.jpg"
+      ],
+      "thumbnail": "/aircraft/su57/su57.jpg",
+      "specs": {
+        "country": "Russia",
+        "era": "Modern",
+        "type": "Fighter",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "tb001",
+      "slug": "tb001",
+      "name": "Tb001",
+      "images": [
+        "/aircraft/tb001/tb001.jpg"
+      ],
+      "thumbnail": "/aircraft/tb001/tb001.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "tb2",
+      "slug": "tb2",
+      "name": "Tb2",
+      "images": [
+        "/aircraft/tb2/tb2.jpg"
+      ],
+      "thumbnail": "/aircraft/tb2/tb2.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "tornado",
+      "slug": "tornado",
+      "name": "Tornado",
+      "images": [
+        "/aircraft/tornado/tornado.jpg"
+      ],
+      "thumbnail": "/aircraft/tornado/tornado.jpg",
+      "specs": {
+        "country": "Multinational",
+        "era": "Modern",
+        "type": "Strike aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "tu160",
+      "slug": "tu160",
+      "name": "Tu160",
+      "images": [
+        "/aircraft/tu160/tu160.jpg"
+      ],
+      "thumbnail": "/aircraft/tu160/tu160.jpg",
+      "specs": {
+        "country": "Russia",
+        "era": "Modern",
+        "type": "Bomber",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "tu22m",
+      "slug": "tu22m",
+      "name": "Tu22m",
+      "images": [
+        "/aircraft/tu22m/tu22m.jpg"
+      ],
+      "thumbnail": "/aircraft/tu22m/tu22m.jpg",
+      "specs": {
+        "country": "Russia",
+        "era": "Modern",
+        "type": "Bomber",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "tu95",
+      "slug": "tu95",
+      "name": "Tu95",
+      "images": [
+        "/aircraft/tu95/tu95.jpg"
+      ],
+      "thumbnail": "/aircraft/tu95/tu95.jpg",
+      "specs": {
+        "country": "Russia",
+        "era": "Modern",
+        "type": "Bomber",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "u2",
+      "slug": "u2",
+      "name": "U2",
+      "images": [
+        "/aircraft/u2/u2.jpg"
+      ],
+      "thumbnail": "/aircraft/u2/u2.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "uh60",
+      "slug": "uh60",
+      "name": "Uh60",
+      "images": [
+        "/aircraft/uh60/uh60.jpg"
+      ],
+      "thumbnail": "/aircraft/uh60/uh60.jpg",
+      "specs": {
+        "country": "United States",
+        "era": "Modern",
+        "type": "Utility helicopter",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "us2",
+      "slug": "us2",
+      "name": "Us2",
+      "images": [
+        "/aircraft/us2/us2.jpg"
+      ],
+      "thumbnail": "/aircraft/us2/us2.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "v22",
+      "slug": "v22",
+      "name": "V22",
+      "images": [
+        "/aircraft/v22/v22.jpg"
+      ],
+      "thumbnail": "/aircraft/v22/v22.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "vulcan",
+      "slug": "vulcan",
+      "name": "Vulcan",
+      "images": [
+        "/aircraft/vulcan/vulcan.jpg"
+      ],
+      "thumbnail": "/aircraft/vulcan/vulcan.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "wz7",
+      "slug": "wz7",
+      "name": "Wz7",
+      "images": [
+        "/aircraft/wz7/wz7.jpg"
+      ],
+      "thumbnail": "/aircraft/wz7/wz7.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "xb70",
+      "slug": "xb70",
+      "name": "Xb70",
+      "images": [
+        "/aircraft/xb70/xb70.jpg"
+      ],
+      "thumbnail": "/aircraft/xb70/xb70.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "y20",
+      "slug": "y20",
+      "name": "Y20",
+      "images": [
+        "/aircraft/y20/y20.jpg"
+      ],
+      "thumbnail": "/aircraft/y20/y20.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "yf23",
+      "slug": "yf23",
+      "name": "Yf23",
+      "images": [
+        "/aircraft/yf23/yf23.jpg"
+      ],
+      "thumbnail": "/aircraft/yf23/yf23.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    },
+    {
+      "id": "z19",
+      "slug": "z19",
+      "name": "Z19",
+      "images": [
+        "/aircraft/z19/z19.jpg"
+      ],
+      "thumbnail": "/aircraft/z19/z19.jpg",
+      "specs": {
+        "country": "Various",
+        "era": "Modern",
+        "type": "Military aircraft",
+        "weight_t": 12.0,
+        "length_m": 15.0,
+        "width_m": 10.0,
+        "height_m": 5.0,
+        "crew": 2,
+        "main_gun": "Cannon / air-to-air missiles",
+        "secondary": "Bombs, guided munitions",
+        "engine": "Turbofan / turbojet",
+        "power_hp": 18000,
+        "power_to_weight_hp_t": 1500.0,
+        "max_speed_kmh": 900,
+        "range_km": 1200,
+        "armor": "Minimal \u2014 survivability systems"
+      }
+    }
+  ],
+  "generatedFrom": "rawsi18/air-military-vehicle-dataset-yolo8-data-format",
+  "classCount": 74
+}
