@@ -1,93 +1,89 @@
-# Codemagic mobile builds
+# Codemagic — iOS builds
 
-Codemagic’s onboarding UI may show **React Native** steps. This project is **Next.js + Capacitor** — use the `codemagic.yaml` in the repo root (same 4-step flow, different stack).
+This project uses **Next.js + Capacitor** (not React Native). The main workflow is **Tank Identifier iOS**.
 
-## Step 1 — Configuration file
+## Workflows
 
-`codemagic.yaml` is already in the project root with three workflows:
+| Workflow | When to use |
+|----------|-------------|
+| **Tank Identifier iOS** | Default — development IPA, runs on push to `main` |
+| **Tank Identifier iOS (App Store)** | TestFlight — run manually after signing works |
 
-| Workflow ID | What it builds |
-|-------------|----------------|
-| `tank-identifier-android-debug` | Debug **APK** (no signing setup) — **start here** |
-| `tank-identifier-android-release` | Release **AAB** (needs Android keystore in Codemagic) |
-| `tank-identifier-ios` | **IPA** (needs Apple code signing + API key) |
+## One-time Apple + Codemagic setup
 
-Build steps (each workflow):
+### 1. Apple Developer Program
+
+You need an active membership ($99/year).
+
+### 2. App Store Connect API key (Codemagic)
+
+1. [App Store Connect](https://appstoreconnect.apple.com/access/integrations/api) → **Users and Access** → **Integrations** → **App Store Connect API** → create key (**App Manager** role).
+2. Download the `.p8` file once; note **Issuer ID** and **Key ID**.
+3. Codemagic → **Team integrations** → **Developer Portal** → **Add key** → upload `.p8`.
+4. In `codemagic.yaml`, set `integrations.app_store_connect` to that key’s name (replace `codemagic`).
+
+### 3. Code signing (Codemagic)
+
+1. **Team settings** → **codemagic.yaml settings** → **Code signing identities**.
+2. **iOS certificates** — generate or upload **Apple Development** (for `tank-identifier-ios`) and **Apple Distribution** (for App Store workflow).
+3. **iOS provisioning profiles** — **Fetch profiles** for bundle id `com.tankidentifier.app` (and extensions if any).
+
+Codemagic matches `bundle_identifier` in the yaml to your profiles.
+
+### 4. App record (TestFlight only)
+
+Create the app in App Store Connect with bundle ID `com.tankidentifier.app`, then set `APP_STORE_APP_ID` in the **App Store** workflow (General → App Information → Apple ID).
+
+## Push and build
+
+### Commit app data + native projects
+
+```bash
+npm run prepare-data:deploy   # recommended (~30MB)
+
+git add codemagic.yaml src/data/tanks.json public/tanks ios/ android/
+git commit -m "Add Codemagic iOS workflow"
+git push origin main
+```
+
+### Codemagic UI
+
+1. [codemagic.io](https://codemagic.io) → your application.
+2. Select branch **main**.
+3. **Check for configuration file**.
+4. Start **Tank Identifier iOS** (also runs automatically on push).
+
+Download the **`.ipa`** from **Artifacts** when the build succeeds.
+
+## Edit `codemagic.yaml`
+
+| Field | What to set |
+|-------|-------------|
+| `app_store_connect:` under `integrations` | Your Codemagic API key name |
+| `publishing.email.recipients` | Your email |
+| `distribution_type` | `development` (dev IPA) or `app_store` (TestFlight) |
+| `APP_STORE_APP_ID` | Numeric Apple ID (App Store workflow only) |
+
+## Build steps (what Codemagic runs)
 
 1. `npm ci`
-2. `npm run build:mobile` — Next.js static export → `out/`
-3. `npx cap sync` — copy into `android/` / `ios/`
-4. Native build (`assembleDebug`, `bundleRelease`, or `build-ipa`)
+2. `npm run build:mobile` — static site → `out/`
+3. `npx cap sync ios` — copy into `ios/`
+4. `xcode-project use-profiles` — signing
+5. `xcode-project build-ipa` — `.ipa` artifact
 
-## Step 2 — Commit the file
-
-**Before pushing**, ensure the app data is in Git (Codemagic has no Kaggle step):
-
-```bash
-# Smaller repo (~30MB) — recommended
-npm run prepare-data:deploy
-
-git add codemagic.yaml src/data/tanks.json public/tanks public/logo.png
-git add android/ ios/   # native projects required for Capacitor CI
-git status
-```
-
-If push fails due to size, see [GITHUB_PUSH.md](GITHUB_PUSH.md).
-
-## Step 3 — Push to GitHub
-
-```bash
-git add codemagic.yaml docs/CODEMAGIC.md
-git commit -m "Add Codemagic CI for Capacitor Android and iOS"
-git push -u origin main
-```
-
-## Step 4 — Codemagic UI
-
-1. Open [codemagic.io](https://codemagic.io) → **Applications** → your app (or **Add application** → connect GitHub repo).
-2. Select the **branch** you pushed (e.g. `main`).
-3. Click **Check for configuration file** (top right).
-4. Codemagic should detect `codemagic.yaml` and list the workflows.
-5. Run **Tank Identifier Android (Debug APK)** first.
-
-## Customize before iOS / Play Store
-
-### Android debug (no changes)
-
-Download the `.apk` from build **Artifacts**.
-
-### Android release
-
-1. Codemagic → **Team settings** → **Code signing identities** → **Android keystores** → upload keystore.
-2. Note the **reference name** (e.g. `tank_identifier_keystore`).
-3. In `codemagic.yaml`, uncomment `android_signing` under `tank-identifier-android-release`.
-4. Replace the email under `publishing.email.recipients`.
-
-### iOS
-
-1. Apple Developer Program membership.
-2. Codemagic → **Team integrations** → **App Store Connect API key**.
-3. Codemagic → **Code signing identities** → certificates + provisioning profiles for `com.tankidentifier.app`.
-4. In `codemagic.yaml` under `tank-identifier-ios`:
-   - Set `integrations.app_store_connect` to your integration name.
-   - Set `APP_STORE_APP_ID` to your app’s numeric Apple ID.
-   - Change `distribution_type` to `app_store` when ready for TestFlight.
-
-Capacitor 8 iOS uses **Swift Package Manager** (no `pod install`).
+No CocoaPods — Capacitor 8 uses Swift Package Manager.
 
 ## Troubleshooting
 
-| Issue | Fix |
+| Error | Fix |
 |-------|-----|
-| Empty app / no tanks | Commit `public/tanks/` and `src/data/tanks.json` |
-| `out/` missing | Workflow runs `npm run build:mobile` — check build logs |
-| iOS signing failed | Complete certificates + profiles in Codemagic; bundle id must match `com.tankidentifier.app` |
-| Android release failed | Upload keystore and enable `android_signing` in release workflow |
+| No configuration file | `codemagic.yaml` must be on the branch you selected |
+| Signing failed | Add Development cert + profile for `com.tankidentifier.app` |
+| Integration not found | Fix `app_store_connect` name in yaml |
+| Empty app | Commit `public/tanks/` and `src/data/tanks.json` |
+| `APP_STORE_APP_ID` / publish failed | Create app in App Store Connect; set numeric Apple ID |
 
-## Local vs Codemagic
+## Android (optional)
 
-| | Local | Codemagic |
-|--|--------|-----------|
-| Web (Vercel) | `npm run build` | Not used |
-| Mobile bundle | `npm run build:mobile` | Same in CI |
-| Native compile | Xcode / Android Studio | Cloud Mac (`mac_mini_m2`) |
+Android workflows were removed from the default config. To add them back, see [Codemagic Ionic/Capacitor docs](https://docs.codemagic.io/yaml-quick-start/building-an-ionic-app/) or git history.

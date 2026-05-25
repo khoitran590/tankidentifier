@@ -73,7 +73,7 @@ See [docs/MOBILE.md](docs/MOBILE.md) for prerequisites, signing, and store build
 git add codemagic.yaml && git commit -m "Add Codemagic CI" && git push
 ```
 
-Then in Codemagic: select branch → **Check for configuration file** → run **Tank Identifier Android (Debug APK)**.
+Then in Codemagic: select branch → **Check for configuration file** → run **Tank Identifier iOS**.
 
 Full guide: [docs/CODEMAGIC.md](docs/CODEMAGIC.md)
 
