@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Tank Identifier",
     short_name: "Tanks",
     description:
-      "Browse military tanks and aircraft, view specifications, and compare vehicles.",
+      "Browse military tanks, view specifications, and compare armored vehicles.",
     start_url: "/",
     scope: "/",
     display: "standalone",

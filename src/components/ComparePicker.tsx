@@ -1,131 +1,154 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CategoryTabs } from "@/components/CategoryTabs";
 import { CompareTable } from "@/components/CompareTable";
-import { getCategoryMeta, parseCompareId, toCompareId, vehiclePath } from "@/lib/categories";
-import type { Vehicle, VehicleCategory } from "@/types/vehicle";
+import { getAllTanks, getTanksBySlugs, tankPath } from "@/lib/tanks";
+import type { Tank } from "@/types/tank";
 
-type Props = {
-  allVehicles: Vehicle[];
-};
+const MAX = 4;
+const MIN = 2;
 
-const MAX_COMPARE = 4;
 const inputClass =
-  "w-full rounded-lg border border-border bg-input px-4 py-2.5 text-foreground placeholder:text-subtle focus:border-accent focus:outline-none focus:ring-1 focus:ring-ring";
+  "w-full rounded-lg border border-border bg-input px-4 py-3 text-foreground placeholder:text-subtle focus:border-accent focus:outline-none focus:ring-2 focus:ring-ring";
 
-function readCompareIds(searchParams: URLSearchParams): string[] {
-  const modern = searchParams.getAll("compare");
-  if (modern.length > 0) return modern;
-
-  const legacy = searchParams.getAll("tanks");
-  return legacy.map((slug) => `tanks:${slug}`);
+function readSlugs(params: URLSearchParams): string[] {
+  const direct = params.getAll("tanks");
+  if (direct.length > 0) return direct.slice(0, MAX);
+  return params
+    .getAll("compare")
+    .map((id) => (id.startsWith("tanks:") ? id.slice(6) : id))
+    .filter(Boolean)
+    .slice(0, MAX);
 }
 
-export function ComparePicker({ allVehicles }: Props) {
+type SlotProps = {
+  index: number;
+  tank?: Tank;
+  active: boolean;
+  onSelect: () => void;
+  onRemove: () => void;
+};
+
+function CompareSlot({ index, tank, active, onSelect, onRemove }: SlotProps) {
+  if (tank) {
+    return (
+      <div
+        className={`relative flex flex-col overflow-hidden rounded-xl border bg-card transition ${
+          active ? "border-accent ring-2 ring-ring" : "border-border"
+        }`}
+      >
+        <div className="relative aspect-[4/3] bg-card-muted">
+          <Image src={tank.thumbnail} alt={tank.name} fill className="object-cover" sizes="200px" />
+          <span className="absolute left-2 top-2 rounded bg-background/90 px-2 py-0.5 text-xs font-medium text-accent">
+            {index + 1}
+          </span>
+        </div>
+        <div className="flex flex-1 flex-col gap-2 p-3">
+          <Link href={tankPath(tank.slug)} className="font-semibold text-heading hover:text-accent">
+            {tank.name}
+          </Link>
+          <p className="text-xs text-muted">{tank.specs.country}</p>
+          <button
+            type="button"
+            onClick={onRemove}
+            className="mt-auto w-full rounded-lg border border-border py-2 text-xs font-medium text-muted transition hover:border-accent/50 hover:bg-card-muted hover:text-accent"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      className={`flex min-h-[220px] flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed p-4 transition ${
+        active
+          ? "border-accent bg-accent-muted/50 text-accent"
+          : "border-border bg-card-muted/30 text-muted hover:border-accent/40 hover:bg-card-muted hover:text-foreground"
+      }`}
+    >
+      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-current text-xl">
+        +
+      </span>
+      <span className="text-sm font-medium">Add tank {index + 1}</span>
+    </button>
+  );
+}
+
+export function ComparePicker() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const addPanelRef = useRef<HTMLDivElement>(null);
+  const allTanks = getAllTanks();
+  const searchRef = useRef<HTMLInputElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
-  const counts = useMemo(
-    () => ({
-      tanks: allVehicles.filter((v) => v.category === "tanks").length,
-      aircraft: allVehicles.filter((v) => v.category === "aircraft").length,
-    }),
-    [allVehicles],
-  );
-
-  const urlIds = useMemo(() => readCompareIds(searchParams), [searchParams]);
-
-  const initialCategory =
-    parseCompareId(urlIds[0] ?? "")?.category ??
-    (searchParams.get("category") === "aircraft" ? "aircraft" : "tanks");
-
-  const categoryParam = searchParams.get("category");
-  const category: VehicleCategory =
-    categoryParam === "aircraft" || categoryParam === "tanks"
-      ? categoryParam
-      : initialCategory;
-
-  const [selected, setSelected] = useState<string[]>(urlIds);
-  const [pickerQuery, setPickerQuery] = useState("");
-  const [addOpen, setAddOpen] = useState(false);
+  const urlSlugs = useMemo(() => readSlugs(searchParams), [searchParams]);
+  const [selected, setSelected] = useState<string[]>(urlSlugs);
+  const [query, setQuery] = useState("");
+  const [activeSlot, setActiveSlot] = useState<number | null>(null);
+  const [listOpen, setListOpen] = useState(false);
 
   useEffect(() => {
-    setSelected(urlIds);
-  }, [urlIds.join("|")]);
+    setSelected(urlSlugs);
+  }, [urlSlugs.join("|")]);
 
   useEffect(() => {
-    function onPointerDown(e: MouseEvent) {
-      if (addPanelRef.current && !addPanelRef.current.contains(e.target as Node)) {
-        setAddOpen(false);
+    function handleClick(e: MouseEvent) {
+      if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
+        setListOpen(false);
       }
     }
-    document.addEventListener("mousedown", onPointerDown);
-    return () => document.removeEventListener("mousedown", onPointerDown);
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  const meta = getCategoryMeta(category);
-  const inCategory = useMemo(
-    () => allVehicles.filter((v) => v.category === category),
-    [allVehicles, category],
-  );
+  const selectedTanks = useMemo(() => getTanksBySlugs(selected), [selected]);
+  const selectedSet = useMemo(() => new Set(selected), [selected]);
 
-  const selectedVehicles = useMemo(
-    () =>
-      selected
-        .map((id) => {
-          const parsed = parseCompareId(id);
-          if (!parsed) return undefined;
-          return allVehicles.find(
-            (v) => v.category === parsed.category && v.slug === parsed.slug,
-          );
-        })
-        .filter((v): v is Vehicle => Boolean(v)),
-    [selected, allVehicles],
-  );
-
-  const selectedIds = useMemo(() => new Set(selected), [selected]);
-
-  const pickerOptions = useMemo(() => {
-    const q = pickerQuery.trim().toLowerCase();
-    return inCategory
-      .filter((v) => !selectedIds.has(toCompareId(v.category, v.slug)))
+  const suggestions = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return allTanks
+      .filter((t) => !selectedSet.has(t.slug))
       .filter(
-        (v) =>
+        (t) =>
           !q ||
-          v.name.toLowerCase().includes(q) ||
-          v.slug.includes(q) ||
-          v.specs.country.toLowerCase().includes(q),
+          t.name.toLowerCase().includes(q) ||
+          t.slug.includes(q) ||
+          t.specs.country.toLowerCase().includes(q) ||
+          t.specs.type.toLowerCase().includes(q),
       )
-      .slice(0, q ? 16 : 10);
-  }, [inCategory, selectedIds, pickerQuery, category]);
+      .slice(0, 12);
+  }, [allTanks, selectedSet, query]);
 
-  function syncUrl(ids: string[]) {
-    if (ids.length === 0) {
-      router.replace(`/compare?category=${category}`);
+  const ready = selected.length >= MIN;
+  const full = selected.length >= MAX;
+
+  function syncUrl(slugs: string[]) {
+    if (slugs.length === 0) {
+      router.replace("/compare");
       return;
     }
-    const params = ids
-      .map((id) => `compare=${encodeURIComponent(id)}`)
-      .join("&");
-    router.replace(`/compare?${params}&category=${category}`);
+    router.replace(`/compare?${slugs.map((s) => `tanks=${encodeURIComponent(s)}`).join("&")}`);
   }
 
-  function add(vehicle: Vehicle) {
-    const id = toCompareId(vehicle.category, vehicle.slug);
-    if (selectedIds.has(id) || selected.length >= MAX_COMPARE) return;
-    const next = [...selected, id];
+  function addTank(tank: Tank) {
+    if (selectedSet.has(tank.slug) || selected.length >= MAX) return;
+    const next = [...selected, tank.slug];
     setSelected(next);
     syncUrl(next);
-    setPickerQuery("");
-    setAddOpen(false);
+    setQuery("");
+    setListOpen(false);
+    setActiveSlot(null);
   }
 
-  function remove(id: string) {
-    const next = selected.filter((s) => s !== id);
+  function removeSlug(slug: string) {
+    const next = selected.filter((s) => s !== slug);
     setSelected(next);
     syncUrl(next);
   }
@@ -133,155 +156,160 @@ export function ComparePicker({ allVehicles }: Props) {
   function clearAll() {
     setSelected([]);
     syncUrl([]);
+    setActiveSlot(0);
+    setListOpen(true);
+    searchRef.current?.focus();
   }
 
-  const canAddMore = selected.length < MAX_COMPARE && counts[category] > 0;
+  function openSlot(index: number) {
+    setActiveSlot(index);
+    setListOpen(true);
+    searchRef.current?.focus();
+  }
+
+  const slots: (Tank | undefined)[] = Array.from({ length: MAX }, (_, i) => selectedTanks[i]);
 
   return (
-    <div className="space-y-8">
-      <CategoryTabs counts={counts} active={category} mode="compare" />
-
-      <section className="rounded-xl border border-border bg-card p-6">
-        <div className="flex flex-wrap items-start justify-between gap-3">
+    <div className="space-y-10">
+      <div className="rounded-xl border border-border bg-card-muted/40 p-4 sm:p-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h2 className="text-lg font-semibold text-heading">Your comparison</h2>
-            <p className="mt-1 text-sm text-muted">
-              Add or remove up to {MAX_COMPARE} vehicles. Use the table below to
-              compare specs side by side.
+            <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+              Step 1 · Pick tanks
             </p>
+            <h2 className="mt-1 text-lg font-semibold text-heading">
+              Select {MIN}–{MAX} tanks to compare
+            </h2>
           </div>
-          {selected.length > 0 && (
-            <button
-              type="button"
-              onClick={clearAll}
-              className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-muted transition hover:border-border-strong hover:bg-card-muted hover:text-foreground"
+          <div className="flex items-center gap-2">
+            <span
+              className={`rounded-full px-3 py-1 text-sm font-medium ${
+                ready
+                  ? "bg-accent-muted text-accent"
+                  : "bg-card text-muted"
+              }`}
             >
-              Clear all
-            </button>
-          )}
+              {selected.length} / {MAX} selected
+            </span>
+            {selected.length > 0 && (
+              <button
+                type="button"
+                onClick={clearAll}
+                className="text-sm text-muted hover:text-foreground"
+              >
+                Clear all
+              </button>
+            )}
+          </div>
         </div>
 
-        <ul className="mt-4 space-y-2" aria-label="Selected vehicles">
-          {selectedVehicles.length === 0 && (
-            <li className="rounded-lg border border-dashed border-border bg-card-muted px-4 py-6 text-center text-sm text-muted">
-              No vehicles selected. Search below to add {meta.label.toLowerCase()}.
-            </li>
-          )}
-          {selectedVehicles.map((vehicle) => {
-            const id = toCompareId(vehicle.category, vehicle.slug);
-            return (
-              <li
-                key={id}
-                className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card-muted px-4 py-3"
-              >
-                <div className="min-w-0">
-                  <Link
-                    href={vehiclePath(vehicle.category, vehicle.slug)}
-                    className="font-medium text-heading hover:text-accent"
-                  >
-                    {vehicle.name}
-                  </Link>
-                  <p className="text-xs text-muted capitalize">
-                    {vehicle.category} · {vehicle.specs.country}
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => remove(id)}
-                  className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground transition hover:border-accent/50 hover:bg-card hover:text-accent"
-                >
-                  Remove
-                </button>
-              </li>
-            );
-          })}
-          {canAddMore &&
-            Array.from({ length: MAX_COMPARE - selected.length }).map((_, i) => (
-              <li
-                key={`slot-${i}`}
-                className="rounded-lg border border-dashed border-border px-4 py-3 text-center text-sm text-muted"
-              >
-                Empty slot — add a {meta.singular.toLowerCase()} below
-              </li>
-            ))}
-        </ul>
+        <p className="mt-2 text-sm text-muted">
+          {ready
+            ? "Scroll down to see the comparison table. Best values per row are highlighted."
+            : selected.length === 1
+              ? "Add one more tank to unlock the comparison table."
+              : "Click an empty slot or search below to add tanks."}
+        </p>
 
-        {category === "aircraft" && counts.aircraft === 0 && (
-          <p className="mt-4 rounded-lg border border-dashed border-border bg-card-muted px-4 py-3 text-sm text-muted">
-            Run <code className="text-foreground">npm run prepare-data:aircraft</code> to
-            populate aircraft from Kaggle.
-          </p>
-        )}
-
-        {canAddMore && (
-          <div ref={addPanelRef} className="relative mt-6">
-            <label className="text-sm font-medium text-heading">
-              Add {meta.singular.toLowerCase()}
-            </label>
-            <input
-              type="search"
-              value={pickerQuery}
-              onChange={(e) => {
-                setPickerQuery(e.target.value);
-                setAddOpen(true);
-              }}
-              onFocus={() => setAddOpen(true)}
-              placeholder={`Search ${meta.label.toLowerCase()} by name or country…`}
-              className={`${inputClass} mt-2`}
-              aria-expanded={addOpen}
-              aria-controls="compare-add-list"
+        <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {slots.map((tank, i) => (
+            <CompareSlot
+              key={i}
+              index={i}
+              tank={tank}
+              active={activeSlot === i}
+              onSelect={() => openSlot(i)}
+              onRemove={() => tank && removeSlug(tank.slug)}
             />
-            {addOpen && pickerOptions.length > 0 && (
-              <ul
-                id="compare-add-list"
-                className="absolute z-20 mt-1 max-h-64 w-full overflow-auto rounded-lg border border-border bg-card shadow-lg"
-              >
-                {pickerOptions.map((vehicle) => (
-                  <li key={vehicle.slug}>
-                    <button
-                      type="button"
-                      onClick={() => add(vehicle)}
-                      className="flex w-full items-center justify-between gap-2 px-4 py-2.5 text-left text-sm text-foreground hover:bg-card-muted"
-                    >
-                      <span className="font-medium">{vehicle.name}</span>
-                      <span className="text-xs text-muted">{vehicle.specs.country}</span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-            {addOpen && pickerQuery && pickerOptions.length === 0 && (
-              <p className="absolute z-20 mt-1 w-full rounded-lg border border-border bg-card px-4 py-3 text-sm text-muted shadow-lg">
-                No matches. Try another name or{" "}
-                <Link
-                  href={`/?category=${category}`}
-                  className="text-accent hover:text-accent-hover"
-                >
-                  browse the catalog
-                </Link>
-                .
-              </p>
-            )}
-            <p className="mt-2 text-xs text-muted">
-              <Link href={`/?category=${category}`} className="text-accent hover:text-accent-hover">
-                Browse catalog
-              </Link>{" "}
-              — or pick from suggestions when the search box is focused.
+          ))}
+        </div>
+
+        <div ref={panelRef} className="relative mt-6">
+          <label htmlFor="compare-search" className="text-sm font-medium text-heading">
+            Search tanks to add
+          </label>
+          <input
+            id="compare-search"
+            ref={searchRef}
+            type="search"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setListOpen(true);
+            }}
+            onFocus={() => setListOpen(true)}
+            disabled={full}
+            placeholder={
+              full
+                ? "Maximum reached — remove a tank to add another"
+                : "Type a tank name or country…"
+            }
+            className={`${inputClass} mt-2 disabled:cursor-not-allowed disabled:opacity-50`}
+            aria-expanded={listOpen && !full}
+            aria-controls="compare-suggestions"
+          />
+
+          {listOpen && !full && suggestions.length > 0 && (
+            <ul
+              id="compare-suggestions"
+              className="absolute z-20 mt-2 max-h-72 w-full overflow-auto rounded-xl border border-border bg-card py-1 shadow-xl"
+            >
+              {suggestions.map((tank) => (
+                <li key={tank.slug}>
+                  <button
+                    type="button"
+                    onClick={() => addTank(tank)}
+                    className="flex w-full items-center gap-3 px-4 py-3 text-left transition hover:bg-card-muted"
+                  >
+                    <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-md border border-border bg-card-muted">
+                      <Image
+                        src={tank.thumbnail}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                      />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p className="font-medium text-foreground">{tank.name}</p>
+                      <p className="text-xs text-muted">
+                        {tank.specs.country} · {tank.specs.type}
+                      </p>
+                    </div>
+                    <span className="shrink-0 text-xs font-medium text-accent">Add</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {listOpen && !full && query && suggestions.length === 0 && (
+            <p className="absolute z-20 mt-2 w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-muted shadow-xl">
+              No tanks match &ldquo;{query}&rdquo;.{" "}
+              <Link href="/" className="text-accent hover:text-accent-hover">
+                Browse the catalog
+              </Link>
             </p>
-          </div>
-        )}
+          )}
 
-        {selected.length >= MAX_COMPARE && (
-          <p className="mt-4 text-sm text-muted">
-            Maximum of {MAX_COMPARE} vehicles. Remove one to add another.
-          </p>
-        )}
-      </section>
+          {!full && !query && listOpen && (
+            <p className="mt-2 text-xs text-muted">
+              Tip: start typing, or{" "}
+              <Link href="/" className="text-accent hover:text-accent-hover">
+                pick tanks from the catalog
+              </Link>{" "}
+              and use Compare.
+            </p>
+          )}
+        </div>
+      </div>
 
-      <CompareTable
-        vehicles={selectedVehicles}
-        onRemove={(vehicle) => remove(toCompareId(vehicle.category, vehicle.slug))}
-      />
+      <div>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-accent">
+          Step 2 · Compare specs
+        </p>
+        <CompareTable tanks={selectedTanks} onRemove={(t) => removeSlug(t.slug)} />
+      </div>
     </div>
   );
 }

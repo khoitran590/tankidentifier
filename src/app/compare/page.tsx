@@ -2,12 +2,10 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { ComparePicker } from "@/components/ComparePicker";
 import { PageShell } from "@/components/PageShell";
-import { getAllVehicles } from "@/lib/vehicles";
 
 export const metadata = {
-  title: "Compare vehicles — Tank Identifier",
-  description:
-    "Side-by-side comparison of military tank and aircraft specifications.",
+  title: "Compare tanks — Tank Identifier",
+  description: "Side-by-side comparison of military tank specifications.",
 };
 
 function CompareFallback() {
@@ -15,16 +13,14 @@ function CompareFallback() {
 }
 
 export default function ComparePage() {
-  const vehicles = getAllVehicles();
-
   return (
     <PageShell
       breadcrumbs={[
         { label: "Catalog", href: "/" },
         { label: "Compare" },
       ]}
-      title="Compare vehicles"
-      description="Select two to four tanks or aircraft and review key metrics in one table. Best-in-row values are highlighted for numeric fields."
+      title="Compare tanks"
+      description="Pick two to four tanks, then review specifications in one table. Higher values are highlighted per row."
       actions={
         <Link
           href="/"
@@ -35,7 +31,7 @@ export default function ComparePage() {
       }
     >
       <Suspense fallback={<CompareFallback />}>
-        <ComparePicker allVehicles={vehicles} />
+        <ComparePicker />
       </Suspense>
     </PageShell>
   );

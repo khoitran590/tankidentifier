@@ -25,8 +25,3 @@ export type Tank = {
   thumbnail: string;
   specs: TankSpecs;
 };
-
-export type TanksData = {
-  tanks: Tank[];
-  generatedFrom: string;
-};

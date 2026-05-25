@@ -8,9 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "prepare-data": "python3 scripts/prepare_dataset.py",
-    "prepare-data:deploy": "python3 scripts/prepare_dataset.py --thumbnails-only",
-    "prepare-data:aircraft": "python3 scripts/prepare_aircraft.py",
-    "prepare-data:aircraft:deploy": "python3 scripts/prepare_aircraft.py --max-per-class 1"
+    "prepare-data:deploy": "python3 scripts/prepare_dataset.py --thumbnails-only"
   },
   "dependencies": {
     "next": "16.2.6",
