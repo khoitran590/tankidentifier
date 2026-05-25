@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { TankCardMedia } from "@/components/TankMedia";
 import { tankPath } from "@/lib/tanks";
 import type { Tank } from "@/types/tank";
 
@@ -7,25 +7,17 @@ type Props = {
   tank: Tank;
   onAddCompare?: (slug: string) => void;
   compareSelected?: boolean;
+  priority?: boolean;
 };
 
-export function TankCard({ tank, onAddCompare, compareSelected }: Props) {
+export function TankCard({ tank, onAddCompare, compareSelected, priority }: Props) {
   const href = tankPath(tank.slug);
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:border-accent/40 hover:shadow-[var(--shadow)]">
-      <Link
-        href={href}
-        className="relative aspect-[4/3] overflow-hidden bg-card-muted"
-      >
-        <Image
-          src={tank.thumbnail}
-          alt={tank.name}
-          fill
-          className="object-cover transition duration-300 group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
-        <span className="absolute left-2 top-2 rounded bg-background/85 px-2 py-0.5 text-xs font-medium text-accent backdrop-blur-sm">
+    <article className="catalog-card group flex flex-col overflow-hidden rounded-2xl border border-border/90 bg-card shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-accent/45 hover:shadow-lg hover:shadow-[var(--shadow)]">
+      <Link href={href} className="relative block">
+        <TankCardMedia tank={tank} priority={priority} />
+        <span className="absolute left-2 top-2 z-10 rounded bg-background/85 px-2 py-0.5 text-xs font-medium text-accent backdrop-blur-sm">
           {tank.specs.country}
         </span>
       </Link>

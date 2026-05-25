@@ -21,10 +21,12 @@ Deploy on **Vercel** for the web. On iPhone, install via **Safari → Add to Hom
 
 ```bash
 npm install
-pip install -r requirements.txt
-npm run prepare-data:deploy   # smaller images, good for GitHub/Vercel
+python3 -m pip install -r requirements.txt
+npm run prepare-data:deploy   # 2 images per tank (~60MB), good for GitHub/Vercel
 npm run dev
 ```
+
+On Windows you may have two Pythons (`python` = 3.12, `python3` = Store 3.10). This project uses **`python`** for npm scripts — run `npm run setup:python` so deps install on that interpreter.
 
 Open [http://localhost:3000](http://localhost:3000).
 
@@ -43,7 +45,8 @@ See [docs/GITHUB_PUSH.md](docs/GITHUB_PUSH.md) if `git push` fails due to large 
 | `npm run dev` | Start dev server |
 | `npm run build` | Production build (Vercel) |
 | `npm run prepare-data` | Full Kaggle dataset → `public/tanks/` |
-| `npm run prepare-data:deploy` | One image per tank (~30MB repo) |
+| `npm run prepare-data:deploy` | Two images per tank (~60MB repo) |
+| `npm run patch-data:two-images` | Update `tanks.json` paths only (no Kaggle download) |
 
 ## Tech stack
 

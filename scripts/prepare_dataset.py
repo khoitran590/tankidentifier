@@ -7,11 +7,28 @@ import argparse
 import json
 import re
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
-import kagglehub
-
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def ensure_dependencies() -> None:
+    try:
+        import kagglehub  # noqa: F401
+    except ImportError:
+        req = ROOT / "requirements.txt"
+        print(f"Installing Python packages for {sys.executable} …")
+        subprocess.check_call(
+            [sys.executable, "-m", "pip", "install", "-r", str(req)],
+            cwd=ROOT,
+        )
+
+
+ensure_dependencies()
+import kagglehub  # noqa: E402
+
 PUBLIC_TANKS = ROOT / "public" / "tanks"
 DATA_FILE = ROOT / "src" / "data" / "tanks.json"
 
@@ -263,11 +280,19 @@ def infer_specs(slug: str) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Prepare tank images and tanks.json")
     parser.add_argument(
+        "--max-images",
+        type=int,
+        default=None,
+        metavar="N",
+        help="Copy at most N images per tank (default: all). Use 2 for deploy (~60MB).",
+    )
+    parser.add_argument(
         "--thumbnails-only",
         action="store_true",
-        help="Copy only one image per tank (~30MB). Recommended for GitHub/Vercel without Git LFS.",
+        help="Deprecated alias for --max-images 1.",
     )
     args = parser.parse_args()
+    max_images = 1 if args.thumbnails_only else args.max_images
 
     print("Downloading dataset via kagglehub...")
     dataset_path = Path(kagglehub.dataset_download("antoreepjana/military-tanks-dataset-images"))
@@ -293,8 +318,8 @@ def main() -> None:
             for p in slug_dir.iterdir()
             if p.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp", ".gif"}
         )
-        if args.thumbnails_only and sources:
-            sources = sources[:1]
+        if max_images is not None and sources:
+            sources = sources[:max_images]
 
         for src in sources:
             dest_name = src.name
@@ -320,7 +345,14 @@ def main() -> None:
     with DATA_FILE.open("w", encoding="utf-8") as f:
         json.dump({"tanks": tanks, "generatedFrom": "antoreepjana/military-tanks-dataset-images"}, f, indent=2)
 
-    mode = "thumbnails only" if args.thumbnails_only else "all images"
+    if max_images == 1:
+        mode = "1 image per tank"
+    elif max_images == 2:
+        mode = "2 images per tank"
+    elif max_images is not None:
+        mode = f"up to {max_images} images per tank"
+    else:
+        mode = "all images"
     print(f"Prepared {len(tanks)} tanks ({mode}) -> {DATA_FILE}")
     print(f"Images copied to {PUBLIC_TANKS}")
 

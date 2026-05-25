@@ -5,7 +5,8 @@
       "slug": "al_khalid",
       "name": "Al Khalid",
       "images": [
-        "/tanks/al_khalid/al_khalid_l1.jpg"
+        "/tanks/al_khalid/al_khalid_l1.jpg",
+        "/tanks/al_khalid/al_khalid_l2.jpg"
       ],
       "thumbnail": "/tanks/al_khalid/al_khalid_l1.jpg",
       "specs": {
@@ -32,7 +33,8 @@
       "slug": "altay",
       "name": "Altay",
       "images": [
-        "/tanks/altay/altay_l1.jpg"
+        "/tanks/altay/altay_l1.jpg",
+        "/tanks/altay/altay_l2.jpg"
       ],
       "thumbnail": "/tanks/altay/altay_l1.jpg",
       "specs": {
@@ -59,7 +61,8 @@
       "slug": "amx_13",
       "name": "Amx 13",
       "images": [
-        "/tanks/amx_13/amx_13_l1.jpg"
+        "/tanks/amx_13/amx_13_l1.jpg",
+        "/tanks/amx_13/amx_13_l2.jpg"
       ],
       "thumbnail": "/tanks/amx_13/amx_13_l1.jpg",
       "specs": {
@@ -86,7 +89,8 @@
       "slug": "amx_30",
       "name": "Amx 30",
       "images": [
-        "/tanks/amx_30/amx_30_l1.jpg"
+        "/tanks/amx_30/amx_30_l1.jpg",
+        "/tanks/amx_30/amx_30_l2.jpg"
       ],
       "thumbnail": "/tanks/amx_30/amx_30_l1.jpg",
       "specs": {
@@ -113,7 +117,8 @@
       "slug": "amx_32",
       "name": "Amx 32",
       "images": [
-        "/tanks/amx_32/amx_32_l1.jpg"
+        "/tanks/amx_32/amx_32_l1.jpg",
+        "/tanks/amx_32/amx_32_l2.jpg"
       ],
       "thumbnail": "/tanks/amx_32/amx_32_l1.jpg",
       "specs": {
@@ -140,7 +145,8 @@
       "slug": "amx_40",
       "name": "Amx 40",
       "images": [
-        "/tanks/amx_40/amx_40_l1.jpg"
+        "/tanks/amx_40/amx_40_l1.jpg",
+        "/tanks/amx_40/amx_40_l2.jpg"
       ],
       "thumbnail": "/tanks/amx_40/amx_40_l1.jpg",
       "specs": {
@@ -167,7 +173,8 @@
       "slug": "anders",
       "name": "Anders",
       "images": [
-        "/tanks/anders/anders_l1.jpg"
+        "/tanks/anders/anders_l1.jpg",
+        "/tanks/anders/anders_l2.jpg"
       ],
       "thumbnail": "/tanks/anders/anders_l1.jpg",
       "specs": {
@@ -194,7 +201,8 @@
       "slug": "ariete",
       "name": "Ariete",
       "images": [
-        "/tanks/ariete/ariete_l1.jpg"
+        "/tanks/ariete/ariete_l1.jpg",
+        "/tanks/ariete/ariete_l2.jpg"
       ],
       "thumbnail": "/tanks/ariete/ariete_l1.jpg",
       "specs": {
@@ -221,7 +229,8 @@
       "slug": "arjun",
       "name": "Arjun",
       "images": [
-        "/tanks/arjun/arjun_l1.jpg"
+        "/tanks/arjun/arjun_l1.jpg",
+        "/tanks/arjun/arjun_l2.jpg"
       ],
       "thumbnail": "/tanks/arjun/arjun_l1.jpg",
       "specs": {
@@ -248,7 +257,8 @@
       "slug": "arjun_mk2",
       "name": "Arjun Mk2",
       "images": [
-        "/tanks/arjun_mk2/arjun_mk2_l1.jpg"
+        "/tanks/arjun_mk2/arjun_mk2_l1.jpg",
+        "/tanks/arjun_mk2/arjun_mk2_l2.jpg"
       ],
       "thumbnail": "/tanks/arjun_mk2/arjun_mk2_l1.jpg",
       "specs": {
@@ -275,7 +285,8 @@
       "slug": "armata",
       "name": "Armata",
       "images": [
-        "/tanks/armata/armata_l1.jpg"
+        "/tanks/armata/armata_l1.jpg",
+        "/tanks/armata/armata_l2.jpg"
       ],
       "thumbnail": "/tanks/armata/armata_l1.jpg",
       "specs": {
@@ -302,7 +313,8 @@
       "slug": "bmpt",
       "name": "Bmpt",
       "images": [
-        "/tanks/bmpt/bmpt_l1.jpg"
+        "/tanks/bmpt/bmpt_l1.jpg",
+        "/tanks/bmpt/bmpt_l10.jpg"
       ],
       "thumbnail": "/tanks/bmpt/bmpt_l1.jpg",
       "specs": {
@@ -329,7 +341,8 @@
       "slug": "bmpt_72",
       "name": "Bmpt 72",
       "images": [
-        "/tanks/bmpt_72/bmpt_72_l1.jpg"
+        "/tanks/bmpt_72/bmpt_72_l1.jpg",
+        "/tanks/bmpt_72/bmpt_72_l2.jpg"
       ],
       "thumbnail": "/tanks/bmpt_72/bmpt_72_l1.jpg",
       "specs": {
@@ -356,7 +369,8 @@
       "slug": "bmt_72",
       "name": "Bmt 72",
       "images": [
-        "/tanks/bmt_72/bmt_72_l1.jpg"
+        "/tanks/bmt_72/bmt_72_l1.jpg",
+        "/tanks/bmt_72/bmt_72_l2.jpg"
       ],
       "thumbnail": "/tanks/bmt_72/bmt_72_l1.jpg",
       "specs": {
@@ -383,7 +397,8 @@
       "slug": "btmp_84",
       "name": "Btmp 84",
       "images": [
-        "/tanks/btmp_84/btmp_84_l1.jpg"
+        "/tanks/btmp_84/btmp_84_l1.jpg",
+        "/tanks/btmp_84/btmp_84_l2.jpg"
       ],
       "thumbnail": "/tanks/btmp_84/btmp_84_l1.jpg",
       "specs": {
@@ -410,7 +425,8 @@
       "slug": "challenger_1",
       "name": "Challenger 1",
       "images": [
-        "/tanks/challenger_1/challenger_1_l1.jpg"
+        "/tanks/challenger_1/challenger_1_l1.jpg",
+        "/tanks/challenger_1/challenger_1_l10.jpg"
       ],
       "thumbnail": "/tanks/challenger_1/challenger_1_l1.jpg",
       "specs": {
@@ -437,7 +453,8 @@
       "slug": "challenger_2",
       "name": "Challenger 2",
       "images": [
-        "/tanks/challenger_2/challenger_2_l1.jpg"
+        "/tanks/challenger_2/challenger_2_l1.jpg",
+        "/tanks/challenger_2/challenger_2_l10.jpg"
       ],
       "thumbnail": "/tanks/challenger_2/challenger_2_l1.jpg",
       "specs": {
@@ -464,7 +481,8 @@
       "slug": "chieftain",
       "name": "Chieftain",
       "images": [
-        "/tanks/chieftain/chieftain_l1.jpg"
+        "/tanks/chieftain/chieftain_l1.jpg",
+        "/tanks/chieftain/chieftain_l10.jpg"
       ],
       "thumbnail": "/tanks/chieftain/chieftain_l1.jpg",
       "specs": {
@@ -518,7 +536,8 @@
       "slug": "cv90105",
       "name": "Cv90105",
       "images": [
-        "/tanks/cv90105/cv90105_l1.jpg"
+        "/tanks/cv90105/cv90105_l1.jpg",
+        "/tanks/cv90105/cv90105_l2.jpg"
       ],
       "thumbnail": "/tanks/cv90105/cv90105_l1.jpg",
       "specs": {
@@ -545,7 +564,8 @@
       "slug": "cv90120t",
       "name": "Cv90120t",
       "images": [
-        "/tanks/cv90120t/cv90120t_l1.jpg"
+        "/tanks/cv90120t/cv90120t_l1.jpg",
+        "/tanks/cv90120t/cv90120t_l2.jpg"
       ],
       "thumbnail": "/tanks/cv90120t/cv90120t_l1.jpg",
       "specs": {
@@ -572,7 +592,8 @@
       "slug": "drozd",
       "name": "Drozd",
       "images": [
-        "/tanks/drozd/drozd_l1.jpg"
+        "/tanks/drozd/drozd_l1.jpg",
+        "/tanks/drozd/drozd_l2.jpg"
       ],
       "thumbnail": "/tanks/drozd/drozd_l1.jpg",
       "specs": {
@@ -599,7 +620,8 @@
       "slug": "expeditionary_tank",
       "name": "Expeditionary Tank",
       "images": [
-        "/tanks/expeditionary_tank/expeditionary_tank_l1.jpg"
+        "/tanks/expeditionary_tank/expeditionary_tank_l1.jpg",
+        "/tanks/expeditionary_tank/expeditionary_tank_l2.jpg"
       ],
       "thumbnail": "/tanks/expeditionary_tank/expeditionary_tank_l1.jpg",
       "specs": {
@@ -626,7 +648,8 @@
       "slug": "fv101_scorpion",
       "name": "Fv101 Scorpion",
       "images": [
-        "/tanks/fv101_scorpion/fv101_scorpion_l1.jpg"
+        "/tanks/fv101_scorpion/fv101_scorpion_l1.jpg",
+        "/tanks/fv101_scorpion/fv101_scorpion_l2.jpg"
       ],
       "thumbnail": "/tanks/fv101_scorpion/fv101_scorpion_l1.jpg",
       "specs": {
@@ -653,7 +676,8 @@
       "slug": "gl5",
       "name": "Gl5",
       "images": [
-        "/tanks/gl5/gl5_l1.jpg"
+        "/tanks/gl5/gl5_l1.jpg",
+        "/tanks/gl5/gl5_l2.jpg"
       ],
       "thumbnail": "/tanks/gl5/gl5_l1.jpg",
       "specs": {
@@ -680,7 +704,8 @@
       "slug": "ikv_91",
       "name": "Ikv 91",
       "images": [
-        "/tanks/ikv_91/ikv_91_l1.jpg"
+        "/tanks/ikv_91/ikv_91_l1.jpg",
+        "/tanks/ikv_91/ikv_91_l2.jpg"
       ],
       "thumbnail": "/tanks/ikv_91/ikv_91_l1.jpg",
       "specs": {
@@ -707,7 +732,8 @@
       "slug": "jaguar",
       "name": "Jaguar",
       "images": [
-        "/tanks/jaguar/jaguar_l1.jpg"
+        "/tanks/jaguar/jaguar_l1.jpg",
+        "/tanks/jaguar/jaguar_l2.jpg"
       ],
       "thumbnail": "/tanks/jaguar/jaguar_l1.jpg",
       "specs": {
@@ -734,7 +760,8 @@
       "slug": "k1",
       "name": "K1",
       "images": [
-        "/tanks/k1/k1_l1.jpg"
+        "/tanks/k1/k1_l1.jpg",
+        "/tanks/k1/k1_l2.jpg"
       ],
       "thumbnail": "/tanks/k1/k1_l1.jpg",
       "specs": {
@@ -761,7 +788,8 @@
       "slug": "k1a1",
       "name": "K1a1",
       "images": [
-        "/tanks/k1a1/k1a1_l1.jpg"
+        "/tanks/k1a1/k1a1_l1.jpg",
+        "/tanks/k1a1/k1a1_l2.jpg"
       ],
       "thumbnail": "/tanks/k1a1/k1a1_l1.jpg",
       "specs": {
@@ -788,7 +816,8 @@
       "slug": "k21_105",
       "name": "K21 105",
       "images": [
-        "/tanks/k21_105/k21_105_l1.jpg"
+        "/tanks/k21_105/k21_105_l1.jpg",
+        "/tanks/k21_105/k21_105_l2.jpg"
       ],
       "thumbnail": "/tanks/k21_105/k21_105_l1.jpg",
       "specs": {
@@ -815,7 +844,8 @@
       "slug": "k21_with_xc8",
       "name": "K21 With Xc8",
       "images": [
-        "/tanks/k21_with_xc8/k21_with_xc8_l1.jpg"
+        "/tanks/k21_with_xc8/k21_with_xc8_l1.jpg",
+        "/tanks/k21_with_xc8/k21_with_xc8_l2.jpg"
       ],
       "thumbnail": "/tanks/k21_with_xc8/k21_with_xc8_l1.jpg",
       "specs": {
@@ -842,7 +872,8 @@
       "slug": "k2_black_panther_mbt",
       "name": "K2 Black Panther Mbt",
       "images": [
-        "/tanks/k2_black_panther_mbt/k2_black_panther_mbt_l1.jpg"
+        "/tanks/k2_black_panther_mbt/k2_black_panther_mbt_l1.jpg",
+        "/tanks/k2_black_panther_mbt/k2_black_panther_mbt_l2.jpg"
       ],
       "thumbnail": "/tanks/k2_black_panther_mbt/k2_black_panther_mbt_l1.jpg",
       "specs": {
@@ -869,7 +900,8 @@
       "slug": "kaplan",
       "name": "Kaplan",
       "images": [
-        "/tanks/kaplan/kaplan_l1.jpg"
+        "/tanks/kaplan/kaplan_l1.jpg",
+        "/tanks/kaplan/kaplan_l2.jpg"
       ],
       "thumbnail": "/tanks/kaplan/kaplan_l1.jpg",
       "specs": {
@@ -896,7 +928,8 @@
       "slug": "karrar",
       "name": "Karrar",
       "images": [
-        "/tanks/karrar/karrar_l1.jpg"
+        "/tanks/karrar/karrar_l1.jpg",
+        "/tanks/karrar/karrar_l2.jpg"
       ],
       "thumbnail": "/tanks/karrar/karrar_l1.jpg",
       "specs": {
@@ -923,7 +956,8 @@
       "slug": "leclerc",
       "name": "Leclerc",
       "images": [
-        "/tanks/leclerc/leclerc_l1.jpg"
+        "/tanks/leclerc/leclerc_l1.jpg",
+        "/tanks/leclerc/leclerc_l10.jpg"
       ],
       "thumbnail": "/tanks/leclerc/leclerc_l1.jpg",
       "specs": {
@@ -950,7 +984,8 @@
       "slug": "leopard",
       "name": "Leopard",
       "images": [
-        "/tanks/leopard/leopard_l1.jpg"
+        "/tanks/leopard/leopard_l1.jpg",
+        "/tanks/leopard/leopard_l2.jpg"
       ],
       "thumbnail": "/tanks/leopard/leopard_l1.jpg",
       "specs": {
@@ -977,7 +1012,8 @@
       "slug": "leopard_2",
       "name": "Leopard 2",
       "images": [
-        "/tanks/leopard_2/leopard_2_l1.jpg"
+        "/tanks/leopard_2/leopard_2_l1.jpg",
+        "/tanks/leopard_2/leopard_2_l10.jpg"
       ],
       "thumbnail": "/tanks/leopard_2/leopard_2_l1.jpg",
       "specs": {
@@ -1004,7 +1040,8 @@
       "slug": "leopard_2a4m_can",
       "name": "Leopard 2a4m Can",
       "images": [
-        "/tanks/leopard_2a4m_can/leopard_2a4m_can_l1.jpg"
+        "/tanks/leopard_2a4m_can/leopard_2a4m_can_l1.jpg",
+        "/tanks/leopard_2a4m_can/leopard_2a4m_can_l2.jpg"
       ],
       "thumbnail": "/tanks/leopard_2a4m_can/leopard_2a4m_can_l1.jpg",
       "specs": {
@@ -1031,7 +1068,8 @@
       "slug": "leopard_2a5",
       "name": "Leopard 2a5",
       "images": [
-        "/tanks/leopard_2a5/leopard_2a5_l1.jpg"
+        "/tanks/leopard_2a5/leopard_2a5_l1.jpg",
+        "/tanks/leopard_2a5/leopard_2a5_l2.jpg"
       ],
       "thumbnail": "/tanks/leopard_2a5/leopard_2a5_l1.jpg",
       "specs": {
@@ -1058,7 +1096,8 @@
       "slug": "leopard_2a6",
       "name": "Leopard 2a6",
       "images": [
-        "/tanks/leopard_2a6/leopard_2a6_l1.jpg"
+        "/tanks/leopard_2a6/leopard_2a6_l1.jpg",
+        "/tanks/leopard_2a6/leopard_2a6_l10.jpg"
       ],
       "thumbnail": "/tanks/leopard_2a6/leopard_2a6_l1.jpg",
       "specs": {
@@ -1085,7 +1124,8 @@
       "slug": "leopard_2a7",
       "name": "Leopard 2a7",
       "images": [
-        "/tanks/leopard_2a7/leopard_2a7_l1.jpg"
+        "/tanks/leopard_2a7/leopard_2a7_l1.jpg",
+        "/tanks/leopard_2a7/leopard_2a7_l2.jpg"
       ],
       "thumbnail": "/tanks/leopard_2a7/leopard_2a7_l1.jpg",
       "specs": {
@@ -1112,7 +1152,8 @@
       "slug": "leopard_2ng",
       "name": "Leopard 2ng",
       "images": [
-        "/tanks/leopard_2ng/leopard_2ng_l1.jpg"
+        "/tanks/leopard_2ng/leopard_2ng_l1.jpg",
+        "/tanks/leopard_2ng/leopard_2ng_l2.jpg"
       ],
       "thumbnail": "/tanks/leopard_2ng/leopard_2ng_l1.jpg",
       "specs": {
@@ -1139,7 +1180,8 @@
       "slug": "leopard_2pl",
       "name": "Leopard 2pl",
       "images": [
-        "/tanks/leopard_2pl/leopard_2pl_l1.jpg"
+        "/tanks/leopard_2pl/leopard_2pl_l1.jpg",
+        "/tanks/leopard_2pl/leopard_2pl_l2.jpg"
       ],
       "thumbnail": "/tanks/leopard_2pl/leopard_2pl_l1.jpg",
       "specs": {
@@ -1166,7 +1208,8 @@
       "slug": "leopard_c2",
       "name": "Leopard C2",
       "images": [
-        "/tanks/leopard_c2/leopard_c2_l1.jpg"
+        "/tanks/leopard_c2/leopard_c2_l1.jpg",
+        "/tanks/leopard_c2/leopard_c2_l10.jpg"
       ],
       "thumbnail": "/tanks/leopard_c2/leopard_c2_l1.jpg",
       "specs": {
@@ -1220,7 +1263,8 @@
       "slug": "m1985",
       "name": "M1985",
       "images": [
-        "/tanks/m1985/m1985_l1.jpg"
+        "/tanks/m1985/m1985_l1.jpg",
+        "/tanks/m1985/m1985_l2.jpg"
       ],
       "thumbnail": "/tanks/m1985/m1985_l1.jpg",
       "specs": {
@@ -1247,7 +1291,8 @@
       "slug": "m1_abrams",
       "name": "M1 Abrams",
       "images": [
-        "/tanks/m1_abrams/m1_abrams_l1.jpg"
+        "/tanks/m1_abrams/m1_abrams_l1.jpg",
+        "/tanks/m1_abrams/m1_abrams_l2.jpg"
       ],
       "thumbnail": "/tanks/m1_abrams/m1_abrams_l1.jpg",
       "specs": {
@@ -1274,7 +1319,8 @@
       "slug": "m1a1_abrams",
       "name": "M1a1 Abrams",
       "images": [
-        "/tanks/m1a1_abrams/m1a1_abrams_l1.jpg"
+        "/tanks/m1a1_abrams/m1a1_abrams_l1.jpg",
+        "/tanks/m1a1_abrams/m1a1_abrams_l10.jpg"
       ],
       "thumbnail": "/tanks/m1a1_abrams/m1a1_abrams_l1.jpg",
       "specs": {
@@ -1301,7 +1347,8 @@
       "slug": "m1a2_abrams",
       "name": "M1a2 Abrams",
       "images": [
-        "/tanks/m1a2_abrams/m1a2_abrams_l1.jpg"
+        "/tanks/m1a2_abrams/m1a2_abrams_l1.jpg",
+        "/tanks/m1a2_abrams/m1a2_abrams_l2.jpg"
       ],
       "thumbnail": "/tanks/m1a2_abrams/m1a2_abrams_l1.jpg",
       "specs": {
@@ -1328,7 +1375,8 @@
       "slug": "m1a2_sep",
       "name": "M1a2 Sep",
       "images": [
-        "/tanks/m1a2_sep/m1a2_sep_l1.jpg"
+        "/tanks/m1a2_sep/m1a2_sep_l1.jpg",
+        "/tanks/m1a2_sep/m1a2_sep_l10.jpg"
       ],
       "thumbnail": "/tanks/m1a2_sep/m1a2_sep_l1.jpg",
       "specs": {
@@ -1355,7 +1403,8 @@
       "slug": "m2002",
       "name": "M2002",
       "images": [
-        "/tanks/m2002/m2002_l1.jpg"
+        "/tanks/m2002/m2002_l1.jpg",
+        "/tanks/m2002/m2002_l2.jpg"
       ],
       "thumbnail": "/tanks/m2002/m2002_l1.jpg",
       "specs": {
@@ -1382,7 +1431,8 @@
       "slug": "m551_sheridan",
       "name": "M551 Sheridan",
       "images": [
-        "/tanks/m551_sheridan/m551_sheridan_l1.jpg"
+        "/tanks/m551_sheridan/m551_sheridan_l1.jpg",
+        "/tanks/m551_sheridan/m551_sheridan_l2.jpg"
       ],
       "thumbnail": "/tanks/m551_sheridan/m551_sheridan_l1.jpg",
       "specs": {
@@ -1409,7 +1459,8 @@
       "slug": "m60_patton",
       "name": "M60 Patton",
       "images": [
-        "/tanks/m60_patton/m60_patton_l1.jpg"
+        "/tanks/m60_patton/m60_patton_l1.jpg",
+        "/tanks/m60_patton/m60_patton_l10.jpg"
       ],
       "thumbnail": "/tanks/m60_patton/m60_patton_l1.jpg",
       "specs": {
@@ -1436,7 +1487,8 @@
       "slug": "m60_phoenix",
       "name": "M60 Phoenix",
       "images": [
-        "/tanks/m60_phoenix/m60_phoenix_l1.jpg"
+        "/tanks/m60_phoenix/m60_phoenix_l1.jpg",
+        "/tanks/m60_phoenix/m60_phoenix_l2.jpg"
       ],
       "thumbnail": "/tanks/m60_phoenix/m60_phoenix_l1.jpg",
       "specs": {
@@ -1463,7 +1515,8 @@
       "slug": "m60a2",
       "name": "M60a2",
       "images": [
-        "/tanks/m60a2/m60a2_l1.jpg"
+        "/tanks/m60a2/m60a2_l1.jpg",
+        "/tanks/m60a2/m60a2_l2.jpg"
       ],
       "thumbnail": "/tanks/m60a2/m60a2_l1.jpg",
       "specs": {
@@ -1490,7 +1543,8 @@
       "slug": "m60a3",
       "name": "M60a3",
       "images": [
-        "/tanks/m60a3/m60a3_l1.jpg"
+        "/tanks/m60a3/m60a3_l1.jpg",
+        "/tanks/m60a3/m60a3_l10.jpg"
       ],
       "thumbnail": "/tanks/m60a3/m60a3_l1.jpg",
       "specs": {
@@ -1517,7 +1571,8 @@
       "slug": "m84",
       "name": "M84",
       "images": [
-        "/tanks/m84/m84_l1.jpg"
+        "/tanks/m84/m84_l1.jpg",
+        "/tanks/m84/m84_l2.jpg"
       ],
       "thumbnail": "/tanks/m84/m84_l1.jpg",
       "specs": {
@@ -1544,7 +1599,8 @@
       "slug": "m84ab1",
       "name": "M84ab1",
       "images": [
-        "/tanks/m84ab1/m84ab1_l1.jpg"
+        "/tanks/m84ab1/m84ab1_l1.jpg",
+        "/tanks/m84ab1/m84ab1_l2.jpg"
       ],
       "thumbnail": "/tanks/m84ab1/m84ab1_l1.jpg",
       "specs": {
@@ -1571,7 +1627,8 @@
       "slug": "m8_buford",
       "name": "M8 Buford",
       "images": [
-        "/tanks/m8_buford/m8_buford_l1.jpg"
+        "/tanks/m8_buford/m8_buford_l1.jpg",
+        "/tanks/m8_buford/m8_buford_l2.jpg"
       ],
       "thumbnail": "/tanks/m8_buford/m8_buford_l1.jpg",
       "specs": {
@@ -1598,7 +1655,8 @@
       "slug": "m90_vihor",
       "name": "M90 Vihor",
       "images": [
-        "/tanks/m90_vihor/m90_vihor_l1.jpg"
+        "/tanks/m90_vihor/m90_vihor_l1.jpg",
+        "/tanks/m90_vihor/m90_vihor_l2.jpg"
       ],
       "thumbnail": "/tanks/m90_vihor/m90_vihor_l1.jpg",
       "specs": {
@@ -1625,7 +1683,8 @@
       "slug": "m95_degman",
       "name": "M95 Degman",
       "images": [
-        "/tanks/m95_degman/m95_degman_l1.jpg"
+        "/tanks/m95_degman/m95_degman_l1.jpg",
+        "/tanks/m95_degman/m95_degman_l2.jpg"
       ],
       "thumbnail": "/tanks/m95_degman/m95_degman_l1.jpg",
       "specs": {
@@ -1652,7 +1711,8 @@
       "slug": "magach_7",
       "name": "Magach 7",
       "images": [
-        "/tanks/magach_7/magach_7_l1.jpg"
+        "/tanks/magach_7/magach_7_l1.jpg",
+        "/tanks/magach_7/magach_7_l10.jpg"
       ],
       "thumbnail": "/tanks/magach_7/magach_7_l1.jpg",
       "specs": {
@@ -1679,7 +1739,8 @@
       "slug": "marder_light_tank",
       "name": "Marder Light Tank",
       "images": [
-        "/tanks/marder_light_tank/marder_light_tank_l1.jpg"
+        "/tanks/marder_light_tank/marder_light_tank_l1.jpg",
+        "/tanks/marder_light_tank/marder_light_tank_l2.jpg"
       ],
       "thumbnail": "/tanks/marder_light_tank/marder_light_tank_l1.jpg",
       "specs": {
@@ -1706,7 +1767,8 @@
       "slug": "mars_15",
       "name": "Mars 15",
       "images": [
-        "/tanks/mars_15/mars_15_l1.jpg"
+        "/tanks/mars_15/mars_15_l1.jpg",
+        "/tanks/mars_15/mars_15_l2.jpg"
       ],
       "thumbnail": "/tanks/mars_15/mars_15_l1.jpg",
       "specs": {
@@ -1733,7 +1795,8 @@
       "slug": "mb3_tamoyo",
       "name": "Mb3 Tamoyo",
       "images": [
-        "/tanks/mb3_tamoyo/mb3_tamoyo_l1.jpg"
+        "/tanks/mb3_tamoyo/mb3_tamoyo_l1.jpg",
+        "/tanks/mb3_tamoyo/mb3_tamoyo_l2.jpg"
       ],
       "thumbnail": "/tanks/mb3_tamoyo/mb3_tamoyo_l1.jpg",
       "specs": {
@@ -1760,7 +1823,8 @@
       "slug": "mbt_3000",
       "name": "Mbt 3000",
       "images": [
-        "/tanks/mbt_3000/mbt_3000_l1.jpg"
+        "/tanks/mbt_3000/mbt_3000_l1.jpg",
+        "/tanks/mbt_3000/mbt_3000_l2.jpg"
       ],
       "thumbnail": "/tanks/mbt_3000/mbt_3000_l1.jpg",
       "specs": {
@@ -1787,7 +1851,8 @@
       "slug": "merkava_mk1",
       "name": "Merkava Mk1",
       "images": [
-        "/tanks/merkava_mk1/merkava_mk1_l1.jpg"
+        "/tanks/merkava_mk1/merkava_mk1_l1.jpg",
+        "/tanks/merkava_mk1/merkava_mk1_l2.jpg"
       ],
       "thumbnail": "/tanks/merkava_mk1/merkava_mk1_l1.jpg",
       "specs": {
@@ -1814,7 +1879,8 @@
       "slug": "merkava_mk2",
       "name": "Merkava Mk2",
       "images": [
-        "/tanks/merkava_mk2/merkava_mk2_l1.jpg"
+        "/tanks/merkava_mk2/merkava_mk2_l1.jpg",
+        "/tanks/merkava_mk2/merkava_mk2_l2.jpg"
       ],
       "thumbnail": "/tanks/merkava_mk2/merkava_mk2_l1.jpg",
       "specs": {
@@ -1841,7 +1907,8 @@
       "slug": "merkava_mk3",
       "name": "Merkava Mk3",
       "images": [
-        "/tanks/merkava_mk3/merkava_mk3_l1.jpg"
+        "/tanks/merkava_mk3/merkava_mk3_l1.jpg",
+        "/tanks/merkava_mk3/merkava_mk3_l10.jpg"
       ],
       "thumbnail": "/tanks/merkava_mk3/merkava_mk3_l1.jpg",
       "specs": {
@@ -1868,7 +1935,8 @@
       "slug": "merkava_mk4",
       "name": "Merkava Mk4",
       "images": [
-        "/tanks/merkava_mk4/merkava_mk4_l1.jpg"
+        "/tanks/merkava_mk4/merkava_mk4_l1.jpg",
+        "/tanks/merkava_mk4/merkava_mk4_l2.jpg"
       ],
       "thumbnail": "/tanks/merkava_mk4/merkava_mk4_l1.jpg",
       "specs": {
@@ -1895,7 +1963,8 @@
       "slug": "merkava_mk4_meil_ruach",
       "name": "Merkava Mk4 Meil Ruach",
       "images": [
-        "/tanks/merkava_mk4_meil_ruach/merkava_mk4_meil_ruach_l1.jpg"
+        "/tanks/merkava_mk4_meil_ruach/merkava_mk4_meil_ruach_l1.jpg",
+        "/tanks/merkava_mk4_meil_ruach/merkava_mk4_meil_ruach_l2.jpg"
       ],
       "thumbnail": "/tanks/merkava_mk4_meil_ruach/merkava_mk4_meil_ruach_l1.jpg",
       "specs": {
@@ -1922,7 +1991,8 @@
       "slug": "nkpz",
       "name": "Nkpz",
       "images": [
-        "/tanks/nkpz/nkpz_l1.jpg"
+        "/tanks/nkpz/nkpz_l1.jpg",
+        "/tanks/nkpz/nkpz_l2.jpg"
       ],
       "thumbnail": "/tanks/nkpz/nkpz_l1.jpg",
       "specs": {
@@ -1949,7 +2019,8 @@
       "slug": "of_40",
       "name": "Of 40",
       "images": [
-        "/tanks/of_40/of_40_l1.jpg"
+        "/tanks/of_40/of_40_l1.jpg",
+        "/tanks/of_40/of_40_l2.jpg"
       ],
       "thumbnail": "/tanks/of_40/of_40_l1.jpg",
       "specs": {
@@ -1976,7 +2047,8 @@
       "slug": "olifant_mk1b",
       "name": "Olifant Mk1b",
       "images": [
-        "/tanks/olifant_mk1b/olifant_mk1b_l1.jpg"
+        "/tanks/olifant_mk1b/olifant_mk1b_l1.jpg",
+        "/tanks/olifant_mk1b/olifant_mk1b_l2.jpg"
       ],
       "thumbnail": "/tanks/olifant_mk1b/olifant_mk1b_l1.jpg",
       "specs": {
@@ -2003,7 +2075,8 @@
       "slug": "olifant_mk2",
       "name": "Olifant Mk2",
       "images": [
-        "/tanks/olifant_mk2/olifant_mk2_l1.jpg"
+        "/tanks/olifant_mk2/olifant_mk2_l1.jpg",
+        "/tanks/olifant_mk2/olifant_mk2_l2.jpg"
       ],
       "thumbnail": "/tanks/olifant_mk2/olifant_mk2_l1.jpg",
       "specs": {
@@ -2030,7 +2103,8 @@
       "slug": "oplot",
       "name": "Oplot",
       "images": [
-        "/tanks/oplot/oplot_l1.jpg"
+        "/tanks/oplot/oplot_l1.jpg",
+        "/tanks/oplot/oplot_l10.jpg"
       ],
       "thumbnail": "/tanks/oplot/oplot_l1.jpg",
       "specs": {
@@ -2057,7 +2131,8 @@
       "slug": "oplot_m",
       "name": "Oplot M",
       "images": [
-        "/tanks/oplot_m/oplot_m_l1.jpg"
+        "/tanks/oplot_m/oplot_m_l1.jpg",
+        "/tanks/oplot_m/oplot_m_l2.jpg"
       ],
       "thumbnail": "/tanks/oplot_m/oplot_m_l1.jpg",
       "specs": {
@@ -2084,7 +2159,8 @@
       "slug": "osorio",
       "name": "Osorio",
       "images": [
-        "/tanks/osorio/osorio_l1.jpg"
+        "/tanks/osorio/osorio_l1.jpg",
+        "/tanks/osorio/osorio_l2.jpg"
       ],
       "thumbnail": "/tanks/osorio/osorio_l1.jpg",
       "specs": {
@@ -2111,7 +2187,8 @@
       "slug": "pl_01",
       "name": "Pl 01",
       "images": [
-        "/tanks/pl_01/pl_01_l1.jpg"
+        "/tanks/pl_01/pl_01_l1.jpg",
+        "/tanks/pl_01/pl_01_l10.jpg"
       ],
       "thumbnail": "/tanks/pl_01/pl_01_l1.jpg",
       "specs": {
@@ -2138,7 +2215,8 @@
       "slug": "pt76",
       "name": "Pt76",
       "images": [
-        "/tanks/pt76/pt76_l1.jpg"
+        "/tanks/pt76/pt76_l1.jpg",
+        "/tanks/pt76/pt76_l2.jpg"
       ],
       "thumbnail": "/tanks/pt76/pt76_l1.jpg",
       "specs": {
@@ -2165,7 +2243,8 @@
       "slug": "pt91_twardy",
       "name": "Pt91 Twardy",
       "images": [
-        "/tanks/pt91_twardy/pt91_twardy_l1.jpg"
+        "/tanks/pt91_twardy/pt91_twardy_l1.jpg",
+        "/tanks/pt91_twardy/pt91_twardy_l10.jpg"
       ],
       "thumbnail": "/tanks/pt91_twardy/pt91_twardy_l1.jpg",
       "specs": {
@@ -2192,7 +2271,8 @@
       "slug": "pt_16",
       "name": "Pt 16",
       "images": [
-        "/tanks/pt_16/pt_16_l1.jpg"
+        "/tanks/pt_16/pt_16_l1.jpg",
+        "/tanks/pt_16/pt_16_l2.jpg"
       ],
       "thumbnail": "/tanks/pt_16/pt_16_l1.jpg",
       "specs": {
@@ -2219,7 +2299,8 @@
       "slug": "revolution",
       "name": "Revolution",
       "images": [
-        "/tanks/revolution/revolution_l1.jpg"
+        "/tanks/revolution/revolution_l1.jpg",
+        "/tanks/revolution/revolution_l10.jpg"
       ],
       "thumbnail": "/tanks/revolution/revolution_l1.jpg",
       "specs": {
@@ -2246,7 +2327,8 @@
       "slug": "ruag_leopard_upgrade",
       "name": "Ruag Leopard Upgrade",
       "images": [
-        "/tanks/ruag_leopard_upgrade/ruag_leopard_upgrade_l1.jpg"
+        "/tanks/ruag_leopard_upgrade/ruag_leopard_upgrade_l1.jpg",
+        "/tanks/ruag_leopard_upgrade/ruag_leopard_upgrade_main.jpg"
       ],
       "thumbnail": "/tanks/ruag_leopard_upgrade/ruag_leopard_upgrade_l1.jpg",
       "specs": {
@@ -2273,7 +2355,8 @@
       "slug": "sabalan",
       "name": "Sabalan",
       "images": [
-        "/tanks/sabalan/sabalan_l1.jpg"
+        "/tanks/sabalan/sabalan_l1.jpg",
+        "/tanks/sabalan/sabalan_l2.jpg"
       ],
       "thumbnail": "/tanks/sabalan/sabalan_l1.jpg",
       "specs": {
@@ -2300,7 +2383,8 @@
       "slug": "sabra",
       "name": "Sabra",
       "images": [
-        "/tanks/sabra/sabra_l1.jpg"
+        "/tanks/sabra/sabra_l1.jpg",
+        "/tanks/sabra/sabra_l10.jpg"
       ],
       "thumbnail": "/tanks/sabra/sabra_l1.jpg",
       "specs": {
@@ -2327,7 +2411,8 @@
       "slug": "sk105_kurassier",
       "name": "Sk105 Kurassier",
       "images": [
-        "/tanks/sk105_kurassier/sk105_kurassier_l1.jpg"
+        "/tanks/sk105_kurassier/sk105_kurassier_l1.jpg",
+        "/tanks/sk105_kurassier/sk105_kurassier_l2.jpg"
       ],
       "thumbnail": "/tanks/sk105_kurassier/sk105_kurassier_l1.jpg",
       "specs": {
@@ -2354,7 +2439,8 @@
       "slug": "sprut_sd",
       "name": "Sprut Sd",
       "images": [
-        "/tanks/sprut_sd/sprut_sd_l1.jpg"
+        "/tanks/sprut_sd/sprut_sd_l1.jpg",
+        "/tanks/sprut_sd/sprut_sd_l2.jpg"
       ],
       "thumbnail": "/tanks/sprut_sd/sprut_sd_l1.jpg",
       "specs": {
@@ -2381,7 +2467,8 @@
       "slug": "sprut_sdm1",
       "name": "Sprut Sdm1",
       "images": [
-        "/tanks/sprut_sdm1/sprut_sdm1_l1.jpg"
+        "/tanks/sprut_sdm1/sprut_sdm1_l1.jpg",
+        "/tanks/sprut_sdm1/sprut_sdm1_l2.jpg"
       ],
       "thumbnail": "/tanks/sprut_sdm1/sprut_sdm1_l1.jpg",
       "specs": {
@@ -2408,7 +2495,8 @@
       "slug": "st2",
       "name": "St2",
       "images": [
-        "/tanks/st2/st2_l1.jpg"
+        "/tanks/st2/st2_l1.jpg",
+        "/tanks/st2/st2_l2.jpg"
       ],
       "thumbnail": "/tanks/st2/st2_l1.jpg",
       "specs": {
@@ -2462,7 +2550,8 @@
       "slug": "super_m60",
       "name": "Super M60",
       "images": [
-        "/tanks/super_m60/super_m60_l1.jpg"
+        "/tanks/super_m60/super_m60_l1.jpg",
+        "/tanks/super_m60/super_m60_l2.jpg"
       ],
       "thumbnail": "/tanks/super_m60/super_m60_l1.jpg",
       "specs": {
@@ -2489,7 +2578,8 @@
       "slug": "t12_black_eagle",
       "name": "T12 Black Eagle",
       "images": [
-        "/tanks/t12_black_eagle/t12_black_eagle_l1.jpg"
+        "/tanks/t12_black_eagle/t12_black_eagle_l1.jpg",
+        "/tanks/t12_black_eagle/t12_black_eagle_l10.jpg"
       ],
       "thumbnail": "/tanks/t12_black_eagle/t12_black_eagle_l1.jpg",
       "specs": {
@@ -2516,7 +2606,8 @@
       "slug": "t55",
       "name": "T55",
       "images": [
-        "/tanks/t55/t55_l1.jpg"
+        "/tanks/t55/t55_l1.jpg",
+        "/tanks/t55/t55_l10.jpg"
       ],
       "thumbnail": "/tanks/t55/t55_l1.jpg",
       "specs": {
@@ -2543,7 +2634,8 @@
       "slug": "t55_enigma",
       "name": "T55 Enigma",
       "images": [
-        "/tanks/t55_enigma/t55_enigma_l1.jpg"
+        "/tanks/t55_enigma/t55_enigma_l1.jpg",
+        "/tanks/t55_enigma/t55_enigma_l2.jpg"
       ],
       "thumbnail": "/tanks/t55_enigma/t55_enigma_l1.jpg",
       "specs": {
@@ -2570,7 +2662,8 @@
       "slug": "t62",
       "name": "T62",
       "images": [
-        "/tanks/t62/t62_l1.jpg"
+        "/tanks/t62/t62_l1.jpg",
+        "/tanks/t62/t62_l2.jpg"
       ],
       "thumbnail": "/tanks/t62/t62_l1.jpg",
       "specs": {
@@ -2597,7 +2690,8 @@
       "slug": "t64",
       "name": "T64",
       "images": [
-        "/tanks/t64/t64_l1.jpg"
+        "/tanks/t64/t64_l1.jpg",
+        "/tanks/t64/t64_l10.jpg"
       ],
       "thumbnail": "/tanks/t64/t64_l1.jpg",
       "specs": {
@@ -2624,7 +2718,8 @@
       "slug": "t64b1m",
       "name": "T64b1m",
       "images": [
-        "/tanks/t64b1m/t64b1m_l1.jpg"
+        "/tanks/t64b1m/t64b1m_l1.jpg",
+        "/tanks/t64b1m/t64b1m_l2.jpg"
       ],
       "thumbnail": "/tanks/t64b1m/t64b1m_l1.jpg",
       "specs": {
@@ -2651,7 +2746,8 @@
       "slug": "t64bm_bulat",
       "name": "T64bm Bulat",
       "images": [
-        "/tanks/t64bm_bulat/t64bm_bulat_l1.jpg"
+        "/tanks/t64bm_bulat/t64bm_bulat_l1.jpg",
+        "/tanks/t64bm_bulat/t64bm_bulat_l2.jpg"
       ],
       "thumbnail": "/tanks/t64bm_bulat/t64bm_bulat_l1.jpg",
       "specs": {
@@ -2678,7 +2774,8 @@
       "slug": "t64e",
       "name": "T64e",
       "images": [
-        "/tanks/t64e/t64e_l1.jpg"
+        "/tanks/t64e/t64e_l1.jpg",
+        "/tanks/t64e/t64e_l10.jpg"
       ],
       "thumbnail": "/tanks/t64e/t64e_l1.jpg",
       "specs": {
@@ -2705,7 +2802,8 @@
       "slug": "t72",
       "name": "T72",
       "images": [
-        "/tanks/t72/t72_l1.jpg"
+        "/tanks/t72/t72_l1.jpg",
+        "/tanks/t72/t72_l2.jpg"
       ],
       "thumbnail": "/tanks/t72/t72_l1.jpg",
       "specs": {
@@ -2732,7 +2830,8 @@
       "slug": "t72b3",
       "name": "T72b3",
       "images": [
-        "/tanks/t72b3/t72b3_l1.jpg"
+        "/tanks/t72b3/t72b3_l1.jpg",
+        "/tanks/t72b3/t72b3_l2.jpg"
       ],
       "thumbnail": "/tanks/t72b3/t72b3_l1.jpg",
       "specs": {
@@ -2759,7 +2858,8 @@
       "slug": "t72b4",
       "name": "T72b4",
       "images": [
-        "/tanks/t72b4/t72b4_l1.jpg"
+        "/tanks/t72b4/t72b4_l1.jpg",
+        "/tanks/t72b4/t72b4_l2.jpg"
       ],
       "thumbnail": "/tanks/t72b4/t72b4_l1.jpg",
       "specs": {
@@ -2786,7 +2886,8 @@
       "slug": "t72m2_moderna",
       "name": "T72m2 Moderna",
       "images": [
-        "/tanks/t72m2_moderna/t72m2_moderna_l1.jpg"
+        "/tanks/t72m2_moderna/t72m2_moderna_l1.jpg",
+        "/tanks/t72m2_moderna/t72m2_moderna_l2.jpg"
       ],
       "thumbnail": "/tanks/t72m2_moderna/t72m2_moderna_l1.jpg",
       "specs": {
@@ -2813,7 +2914,8 @@
       "slug": "t72m4",
       "name": "T72m4",
       "images": [
-        "/tanks/t72m4/t72m4_l1.jpg"
+        "/tanks/t72m4/t72m4_l1.jpg",
+        "/tanks/t72m4/t72m4_l10.jpg"
       ],
       "thumbnail": "/tanks/t72m4/t72m4_l1.jpg",
       "specs": {
@@ -2840,7 +2942,8 @@
       "slug": "t72ua1",
       "name": "T72ua1",
       "images": [
-        "/tanks/t72ua1/t72ua1_l1.jpg"
+        "/tanks/t72ua1/t72ua1_l1.jpg",
+        "/tanks/t72ua1/t72ua1_l2.jpg"
       ],
       "thumbnail": "/tanks/t72ua1/t72ua1_l1.jpg",
       "specs": {
@@ -2867,7 +2970,8 @@
       "slug": "t80",
       "name": "T80",
       "images": [
-        "/tanks/t80/t80_l1.jpg"
+        "/tanks/t80/t80_l1.jpg",
+        "/tanks/t80/t80_l2.jpg"
       ],
       "thumbnail": "/tanks/t80/t80_l1.jpg",
       "specs": {
@@ -2894,7 +2998,8 @@
       "slug": "t80b",
       "name": "T80b",
       "images": [
-        "/tanks/t80b/t80b_l1.jpg"
+        "/tanks/t80b/t80b_l1.jpg",
+        "/tanks/t80b/t80b_l2.jpg"
       ],
       "thumbnail": "/tanks/t80b/t80b_l1.jpg",
       "specs": {
@@ -2921,7 +3026,8 @@
       "slug": "t80bvm",
       "name": "T80bvm",
       "images": [
-        "/tanks/t80bvm/t80bvm_l1.jpg"
+        "/tanks/t80bvm/t80bvm_l1.jpg",
+        "/tanks/t80bvm/t80bvm_l2.jpg"
       ],
       "thumbnail": "/tanks/t80bvm/t80bvm_l1.jpg",
       "specs": {
@@ -2948,7 +3054,8 @@
       "slug": "t80u",
       "name": "T80u",
       "images": [
-        "/tanks/t80u/t80u_l1.jpg"
+        "/tanks/t80u/t80u_l1.jpg",
+        "/tanks/t80u/t80u_l10.jpg"
       ],
       "thumbnail": "/tanks/t80u/t80u_l1.jpg",
       "specs": {
@@ -2975,7 +3082,8 @@
       "slug": "t80ud",
       "name": "T80ud",
       "images": [
-        "/tanks/t80ud/t80ud_l1.jpg"
+        "/tanks/t80ud/t80ud_l1.jpg",
+        "/tanks/t80ud/t80ud_l2.jpg"
       ],
       "thumbnail": "/tanks/t80ud/t80ud_l1.jpg",
       "specs": {
@@ -3002,7 +3110,8 @@
       "slug": "t80um1_bars",
       "name": "T80um1 Bars",
       "images": [
-        "/tanks/t80um1_bars/t80um1_bars_l1.jpg"
+        "/tanks/t80um1_bars/t80um1_bars_l1.jpg",
+        "/tanks/t80um1_bars/t80um1_bars_l2.jpg"
       ],
       "thumbnail": "/tanks/t80um1_bars/t80um1_bars_l1.jpg",
       "specs": {
@@ -3029,7 +3138,8 @@
       "slug": "t84",
       "name": "T84",
       "images": [
-        "/tanks/t84/t84_l1.jpg"
+        "/tanks/t84/t84_l1.jpg",
+        "/tanks/t84/t84_l2.jpg"
       ],
       "thumbnail": "/tanks/t84/t84_l1.jpg",
       "specs": {
@@ -3056,7 +3166,8 @@
       "slug": "t84_yatagan",
       "name": "T84 Yatagan",
       "images": [
-        "/tanks/t84_yatagan/t84_yatagan_l1.jpg"
+        "/tanks/t84_yatagan/t84_yatagan_l1.jpg",
+        "/tanks/t84_yatagan/t84_yatagan_l2.jpg"
       ],
       "thumbnail": "/tanks/t84_yatagan/t84_yatagan_l1.jpg",
       "specs": {
@@ -3083,7 +3194,8 @@
       "slug": "t90",
       "name": "T90",
       "images": [
-        "/tanks/t90/t90_l1.jpg"
+        "/tanks/t90/t90_l1.jpg",
+        "/tanks/t90/t90_l2.jpg"
       ],
       "thumbnail": "/tanks/t90/t90_l1.jpg",
       "specs": {
@@ -3110,7 +3222,8 @@
       "slug": "t90m",
       "name": "T90m",
       "images": [
-        "/tanks/t90m/t90m_l1.jpg"
+        "/tanks/t90m/t90m_l1.jpg",
+        "/tanks/t90m/t90m_l2.jpg"
       ],
       "thumbnail": "/tanks/t90m/t90m_l1.jpg",
       "specs": {
@@ -3137,7 +3250,8 @@
       "slug": "t90ms_tagil",
       "name": "T90ms Tagil",
       "images": [
-        "/tanks/t90ms_tagil/t90ms_tagil_l1.jpg"
+        "/tanks/t90ms_tagil/t90ms_tagil_l1.jpg",
+        "/tanks/t90ms_tagil/t90ms_tagil_l2.jpg"
       ],
       "thumbnail": "/tanks/t90ms_tagil/t90ms_tagil_l1.jpg",
       "specs": {
@@ -3164,7 +3278,8 @@
       "slug": "t95",
       "name": "T95",
       "images": [
-        "/tanks/t95/t95_l1.jpg"
+        "/tanks/t95/t95_l1.jpg",
+        "/tanks/t95/t95_l2.jpg"
       ],
       "thumbnail": "/tanks/t95/t95_l1.jpg",
       "specs": {
@@ -3191,7 +3306,8 @@
       "slug": "tam",
       "name": "Tam",
       "images": [
-        "/tanks/tam/tam_l1.jpg"
+        "/tanks/tam/tam_l1.jpg",
+        "/tanks/tam/tam_l2.jpg"
       ],
       "thumbnail": "/tanks/tam/tam_l1.jpg",
       "specs": {
@@ -3218,7 +3334,8 @@
       "slug": "tank_ex",
       "name": "Tank Ex",
       "images": [
-        "/tanks/tank_ex/tank_ex_l1.jpg"
+        "/tanks/tank_ex/tank_ex_l1.jpg",
+        "/tanks/tank_ex/tank_ex_l2.jpg"
       ],
       "thumbnail": "/tanks/tank_ex/tank_ex_l1.jpg",
       "specs": {
@@ -3272,7 +3389,8 @@
       "slug": "tk_x",
       "name": "Tk X",
       "images": [
-        "/tanks/tk_x/tk_x_l1.jpg"
+        "/tanks/tk_x/tk_x_l1.jpg",
+        "/tanks/tk_x/tk_x_l2.jpg"
       ],
       "thumbnail": "/tanks/tk_x/tk_x_l1.jpg",
       "specs": {
@@ -3299,7 +3417,8 @@
       "slug": "tm_800",
       "name": "Tm 800",
       "images": [
-        "/tanks/tm_800/tm_800_l1.jpg"
+        "/tanks/tm_800/tm_800_l1.jpg",
+        "/tanks/tm_800/tm_800_l2.jpg"
       ],
       "thumbnail": "/tanks/tm_800/tm_800_l1.jpg",
       "specs": {
@@ -3326,7 +3445,8 @@
       "slug": "tosan",
       "name": "Tosan",
       "images": [
-        "/tanks/tosan/tosan_l1.jpg"
+        "/tanks/tosan/tosan_l1.jpg",
+        "/tanks/tosan/tosan_l2.jpg"
       ],
       "thumbnail": "/tanks/tosan/tosan_l1.jpg",
       "specs": {
@@ -3353,7 +3473,8 @@
       "slug": "tr85m1",
       "name": "Tr85m1",
       "images": [
-        "/tanks/tr85m1/tr85m1_l1.jpg"
+        "/tanks/tr85m1/tr85m1_l1.jpg",
+        "/tanks/tr85m1/tr85m1_l2.jpg"
       ],
       "thumbnail": "/tanks/tr85m1/tr85m1_l1.jpg",
       "specs": {
@@ -3380,7 +3501,8 @@
       "slug": "tusk",
       "name": "Tusk",
       "images": [
-        "/tanks/tusk/tusk_l1.jpg"
+        "/tanks/tusk/tusk_l1.jpg",
+        "/tanks/tusk/tusk_l2.jpg"
       ],
       "thumbnail": "/tanks/tusk/tusk_l1.jpg",
       "specs": {
@@ -3407,7 +3529,8 @@
       "slug": "type_62",
       "name": "Type 62",
       "images": [
-        "/tanks/type_62/type_62_l1.jpg"
+        "/tanks/type_62/type_62_l1.jpg",
+        "/tanks/type_62/type_62_l2.jpg"
       ],
       "thumbnail": "/tanks/type_62/type_62_l1.jpg",
       "specs": {
@@ -3434,7 +3557,8 @@
       "slug": "type_63",
       "name": "Type 63",
       "images": [
-        "/tanks/type_63/type_63_l1.jpg"
+        "/tanks/type_63/type_63_l1.jpg",
+        "/tanks/type_63/type_63_l2.jpg"
       ],
       "thumbnail": "/tanks/type_63/type_63_l1.jpg",
       "specs": {
@@ -3461,7 +3585,8 @@
       "slug": "type_63a",
       "name": "Type 63a",
       "images": [
-        "/tanks/type_63a/type_63a_l1.jpg"
+        "/tanks/type_63a/type_63a_l1.jpg",
+        "/tanks/type_63a/type_63a_l2.jpg"
       ],
       "thumbnail": "/tanks/type_63a/type_63a_l1.jpg",
       "specs": {
@@ -3488,7 +3613,8 @@
       "slug": "type_74",
       "name": "Type 74",
       "images": [
-        "/tanks/type_74/type_74_l1.jpg"
+        "/tanks/type_74/type_74_l1.jpg",
+        "/tanks/type_74/type_74_l10.jpg"
       ],
       "thumbnail": "/tanks/type_74/type_74_l1.jpg",
       "specs": {
@@ -3515,7 +3641,8 @@
       "slug": "type_80",
       "name": "Type 80",
       "images": [
-        "/tanks/type_80/type_80_l1.jpg"
+        "/tanks/type_80/type_80_l1.jpg",
+        "/tanks/type_80/type_80_l2.jpg"
       ],
       "thumbnail": "/tanks/type_80/type_80_l1.jpg",
       "specs": {
@@ -3542,7 +3669,8 @@
       "slug": "type_90",
       "name": "Type 90",
       "images": [
-        "/tanks/type_90/type_90_l1.jpg"
+        "/tanks/type_90/type_90_l1.jpg",
+        "/tanks/type_90/type_90_l10.jpg"
       ],
       "thumbnail": "/tanks/type_90/type_90_l1.jpg",
       "specs": {
@@ -3569,7 +3697,8 @@
       "slug": "type_90_II",
       "name": "Type 90 II",
       "images": [
-        "/tanks/type_90_II/type_90_II_l1.jpg"
+        "/tanks/type_90_II/type_90_II_l1.jpg",
+        "/tanks/type_90_II/type_90_II_l2.jpg"
       ],
       "thumbnail": "/tanks/type_90_II/type_90_II_l1.jpg",
       "specs": {
@@ -3596,7 +3725,8 @@
       "slug": "type_96",
       "name": "Type 96",
       "images": [
-        "/tanks/type_96/type_96_l1.jpg"
+        "/tanks/type_96/type_96_l1.jpg",
+        "/tanks/type_96/type_96_l2.jpg"
       ],
       "thumbnail": "/tanks/type_96/type_96_l1.jpg",
       "specs": {
@@ -3623,7 +3753,8 @@
       "slug": "type_98",
       "name": "Type 98",
       "images": [
-        "/tanks/type_98/type_98_l1.jpg"
+        "/tanks/type_98/type_98_l1.jpg",
+        "/tanks/type_98/type_98_l2.jpg"
       ],
       "thumbnail": "/tanks/type_98/type_98_l1.jpg",
       "specs": {
@@ -3650,7 +3781,8 @@
       "slug": "type_99",
       "name": "Type 99",
       "images": [
-        "/tanks/type_99/type_99_l1.jpg"
+        "/tanks/type_99/type_99_l1.jpg",
+        "/tanks/type_99/type_99_l10.jpg"
       ],
       "thumbnail": "/tanks/type_99/type_99_l1.jpg",
       "specs": {
@@ -3677,7 +3809,8 @@
       "slug": "type_99g",
       "name": "Type 99g",
       "images": [
-        "/tanks/type_99g/type_99g_l1.jpg"
+        "/tanks/type_99g/type_99g_l1.jpg",
+        "/tanks/type_99g/type_99g_l2.jpg"
       ],
       "thumbnail": "/tanks/type_99g/type_99g_l1.jpg",
       "specs": {
@@ -3704,7 +3837,8 @@
       "slug": "unidentified_north_korean_mbt",
       "name": "Unidentified North Korean Mbt",
       "images": [
-        "/tanks/unidentified_north_korean_mbt/unidentified_north_korean_mbt_l1.jpg"
+        "/tanks/unidentified_north_korean_mbt/unidentified_north_korean_mbt_l1.jpg",
+        "/tanks/unidentified_north_korean_mbt/unidentified_north_korean_mbt_l2.jpg"
       ],
       "thumbnail": "/tanks/unidentified_north_korean_mbt/unidentified_north_korean_mbt_l1.jpg",
       "specs": {
@@ -3731,7 +3865,8 @@
       "slug": "vfm_5",
       "name": "Vfm 5",
       "images": [
-        "/tanks/vfm_5/vfm_5_l1.jpg"
+        "/tanks/vfm_5/vfm_5_l1.jpg",
+        "/tanks/vfm_5/vfm_5_l2.jpg"
       ],
       "thumbnail": "/tanks/vfm_5/vfm_5_l1.jpg",
       "specs": {
@@ -3758,7 +3893,8 @@
       "slug": "vickers_mk3",
       "name": "Vickers Mk3",
       "images": [
-        "/tanks/vickers_mk3/vickers_mk3_l1.jpg"
+        "/tanks/vickers_mk3/vickers_mk3_l1.jpg",
+        "/tanks/vickers_mk3/vickers_mk3_l2.jpg"
       ],
       "thumbnail": "/tanks/vickers_mk3/vickers_mk3_l1.jpg",
       "specs": {
@@ -3785,7 +3921,8 @@
       "slug": "vickers_mk4",
       "name": "Vickers Mk4",
       "images": [
-        "/tanks/vickers_mk4/vickers_mk4_l1.jpg"
+        "/tanks/vickers_mk4/vickers_mk4_l1.jpg",
+        "/tanks/vickers_mk4/vickers_mk4_l2.jpg"
       ],
       "thumbnail": "/tanks/vickers_mk4/vickers_mk4_l1.jpg",
       "specs": {
@@ -3812,7 +3949,8 @@
       "slug": "vickers_mk7",
       "name": "Vickers Mk7",
       "images": [
-        "/tanks/vickers_mk7/vickers_mk7_l1.jpg"
+        "/tanks/vickers_mk7/vickers_mk7_l1.jpg",
+        "/tanks/vickers_mk7/vickers_mk7_l2.jpg"
       ],
       "thumbnail": "/tanks/vickers_mk7/vickers_mk7_l1.jpg",
       "specs": {
@@ -3839,7 +3977,8 @@
       "slug": "vt2",
       "name": "Vt2",
       "images": [
-        "/tanks/vt2/vt2_l1.jpg"
+        "/tanks/vt2/vt2_l1.jpg",
+        "/tanks/vt2/vt2_l2.jpg"
       ],
       "thumbnail": "/tanks/vt2/vt2_l1.jpg",
       "specs": {
@@ -3866,7 +4005,8 @@
       "slug": "vt4",
       "name": "Vt4",
       "images": [
-        "/tanks/vt4/vt4_l1.jpg"
+        "/tanks/vt4/vt4_l1.jpg",
+        "/tanks/vt4/vt4_l2.jpg"
       ],
       "thumbnail": "/tanks/vt4/vt4_l1.jpg",
       "specs": {
@@ -3893,7 +4033,8 @@
       "slug": "vt5",
       "name": "Vt5",
       "images": [
-        "/tanks/vt5/vt5_l1.jpg"
+        "/tanks/vt5/vt5_l1.jpg",
+        "/tanks/vt5/vt5_l2.jpg"
       ],
       "thumbnail": "/tanks/vt5/vt5_l1.jpg",
       "specs": {
@@ -3920,7 +4061,8 @@
       "slug": "zbd_2000_light_tank",
       "name": "Zbd 2000 Light Tank",
       "images": [
-        "/tanks/zbd_2000_light_tank/zbd_2000_light_tank_l1.jpg"
+        "/tanks/zbd_2000_light_tank/zbd_2000_light_tank_l1.jpg",
+        "/tanks/zbd_2000_light_tank/zbd_2000_light_tank_l2.jpg"
       ],
       "thumbnail": "/tanks/zbd_2000_light_tank/zbd_2000_light_tank_l1.jpg",
       "specs": {
@@ -3947,7 +4089,8 @@
       "slug": "ztq_15",
       "name": "Ztq 15",
       "images": [
-        "/tanks/ztq_15/ztq_15_l1.jpg"
+        "/tanks/ztq_15/ztq_15_l1.jpg",
+        "/tanks/ztq_15/ztq_15_l10.jpg"
       ],
       "thumbnail": "/tanks/ztq_15/ztq_15_l1.jpg",
       "specs": {
@@ -3974,7 +4117,8 @@
       "slug": "zulfiqar_1",
       "name": "Zulfiqar 1",
       "images": [
-        "/tanks/zulfiqar_1/zulfiqar_1_l1.jpg"
+        "/tanks/zulfiqar_1/zulfiqar_1_l1.jpg",
+        "/tanks/zulfiqar_1/zulfiqar_1_l2.jpg"
       ],
       "thumbnail": "/tanks/zulfiqar_1/zulfiqar_1_l1.jpg",
       "specs": {
@@ -4001,7 +4145,8 @@
       "slug": "zulfiqar_2",
       "name": "Zulfiqar 2",
       "images": [
-        "/tanks/zulfiqar_2/zulfiqar_2_l1.jpg"
+        "/tanks/zulfiqar_2/zulfiqar_2_l1.jpg",
+        "/tanks/zulfiqar_2/zulfiqar_2_main.jpg"
       ],
       "thumbnail": "/tanks/zulfiqar_2/zulfiqar_2_l1.jpg",
       "specs": {
@@ -4028,7 +4173,8 @@
       "slug": "zulfiqar_3",
       "name": "Zulfiqar 3",
       "images": [
-        "/tanks/zulfiqar_3/zulfiqar_3_l1.jpg"
+        "/tanks/zulfiqar_3/zulfiqar_3_l1.jpg",
+        "/tanks/zulfiqar_3/zulfiqar_3_l2.jpg"
       ],
       "thumbnail": "/tanks/zulfiqar_3/zulfiqar_3_l1.jpg",
       "specs": {

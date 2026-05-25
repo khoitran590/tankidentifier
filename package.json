@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "prepare-data": "python3 scripts/prepare_dataset.py",
-    "prepare-data:deploy": "python3 scripts/prepare_dataset.py --thumbnails-only"
+    "setup:python": "python -m pip install -r requirements.txt",
+    "prepare-data": "npm run setup:python && python scripts/prepare_dataset.py",
+    "prepare-data:deploy": "npm run setup:python && python scripts/prepare_dataset.py --max-images 2",
+    "patch-data:two-images": "python scripts/patch_two_images_json.py"
   },
   "dependencies": {
     "next": "16.2.6",

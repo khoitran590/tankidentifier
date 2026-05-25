@@ -63,10 +63,44 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
+
+.catalog-page-wrap {
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -30%, var(--accent-muted), transparent 55%),
+    var(--background);
+}
+
+.scroll-progress {
+  will-change: transform;
+}
+
+/* Skip off-screen catalog cards until scrolled into view */
+.catalog-grid .catalog-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 380px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-grid .catalog-card * {
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @supports (-webkit-touch-callout: none) {

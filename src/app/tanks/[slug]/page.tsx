@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageShell";
 import { SpecTable } from "@/components/SpecTable";
+import { TankGallery } from "@/components/TankMedia";
 import { TankPager } from "@/components/TankPager";
 import { getAdjacentTanks, getAllTanks, getTankBySlug } from "@/lib/tanks";
 
@@ -64,28 +64,8 @@ export default async function TankDetailPage({ params }: Props) {
         </>
       }
     >
-      <div className="grid gap-10 lg:grid-cols-2">
-        <div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {tank.images.map((src, i) => (
-              <div
-                key={src}
-                className={`relative overflow-hidden rounded-xl border border-border bg-card-muted ${
-                  i === 0 ? "sm:col-span-2 aspect-[16/10]" : "aspect-[4/3]"
-                }`}
-              >
-                <Image
-                  src={src}
-                  alt={`${tank.name} — photo ${i + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority={i === 0}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+        <TankGallery tank={tank} />
 
         <div className="space-y-6">
           <div>
