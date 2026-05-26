@@ -24,10 +24,10 @@ export function HeaderNavMobile() {
         <li key={item.href}>
           <Link
             href={item.href}
-            className={`flex flex-col rounded-lg px-4 py-3 transition ${
+            className={`flex flex-col rounded-lg border px-4 py-3 transition ${
               isNavActive(pathname, item.href)
-                ? "bg-accent-muted text-accent"
-                : "text-foreground hover:bg-card-muted"
+                ? "border-accent/40 bg-accent-muted font-semibold text-accent shadow-sm ring-1 ring-inset ring-accent/35"
+                : "border-transparent text-foreground hover:border-border hover:bg-card-muted dark:text-stone-200"
             }`}
           >
             <span className="font-medium">{item.label}</span>

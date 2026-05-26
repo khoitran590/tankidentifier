@@ -51,11 +51,11 @@ export function CompareTable({ tanks, onRemove }: Props) {
   ]);
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
+    <div className="overflow-x-auto rounded-xl border border-border shadow-sm dark:border-border-strong">
       <table className="min-w-full text-sm">
         <thead>
-          <tr className="border-b border-border bg-card-muted">
-            <th className="sticky left-0 z-10 min-w-[130px] bg-card-muted px-4 py-4 text-left font-medium text-muted">
+          <tr className="border-b border-border bg-card-muted dark:border-border-strong dark:bg-card">
+            <th className="sticky left-0 z-10 min-w-[130px] bg-card-muted px-4 py-4 text-left font-medium text-muted dark:bg-card dark:text-stone-300">
               Specification
             </th>
             {tanks.map((tank) => (
@@ -99,8 +99,8 @@ export function CompareTable({ tanks, onRemove }: Props) {
                 : null;
 
             return (
-              <tr key={metric.key} className="border-b border-border last:border-0">
-                <td className="sticky left-0 z-10 bg-background px-4 py-3 font-medium text-muted">
+              <tr key={metric.key} className="border-b border-border last:border-0 dark:border-border-strong/80">
+                <td className="sticky left-0 z-10 bg-background px-4 py-3 font-medium text-muted dark:bg-card-muted dark:text-stone-300">
                   {metric.label}
                 </td>
                 {tanks.map((tank) => {
@@ -131,7 +131,7 @@ export function CompareTable({ tanks, onRemove }: Props) {
           })}
         </tbody>
       </table>
-      <p className="border-t border-border bg-card-muted px-4 py-2 text-xs text-muted">
+      <p className="border-t border-border bg-card-muted px-4 py-2 text-xs text-muted dark:border-border-strong dark:bg-card">
         Highlighted cells show the highest value in each numeric row (not including crew).
       </p>
     </div>

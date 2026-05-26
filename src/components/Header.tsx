@@ -25,7 +25,7 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 pt-[env(safe-area-inset-top)] backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 pt-[env(safe-area-inset-top)] backdrop-blur-md dark:border-border-strong dark:bg-background/98">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
         <Logo />
 
@@ -57,7 +57,7 @@ export function Header() {
           />
           <nav
             id="mobile-nav"
-            className="absolute left-0 right-0 top-full z-50 border-b border-border bg-card px-4 py-4 shadow-lg md:hidden"
+            className="absolute left-0 right-0 top-full z-50 border-b border-border-strong bg-card px-4 py-4 shadow-lg shadow-[var(--shadow)] md:hidden"
             aria-label="Mobile navigation"
           >
             <HeaderNavMobile />

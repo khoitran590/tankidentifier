@@ -97,7 +97,7 @@ export function TankGallery({ tank }: TankGalleryProps) {
 
   return (
     <div className="space-y-3">
-      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-card-muted sm:aspect-[4/3]">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-card-muted dark:border-border-strong sm:aspect-[4/3]">
         <Image
           src={activeSrc}
           alt={`${tank.name} — photo ${active + 1}`}
@@ -123,10 +123,10 @@ export function TankGallery({ tank }: TankGalleryProps) {
                 aria-selected={active === i}
                 aria-label={`Photo ${i + 1}`}
                 onClick={() => setActive(i)}
-                className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                   active === i
-                    ? "border-accent ring-1 ring-ring"
-                    : "border-border opacity-80 hover:border-border-strong hover:opacity-100"
+                    ? "border-accent ring-2 ring-accent/50 dark:shadow-[0_0_0_1px_var(--accent)]"
+                    : "border-border-strong opacity-90 hover:border-accent/50 hover:opacity-100 dark:opacity-100"
                 }`}
               >
                 <Image src={src} alt="" fill className="object-cover" sizes={SIZES.thumb} />

@@ -25,7 +25,7 @@ type Props = {
 
 export function SpecTable({ specs }: Props) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border">
+    <div className="overflow-hidden rounded-xl border border-border dark:border-border-strong dark:shadow-sm">
       <table className="w-full text-sm">
         <tbody>
           {ROWS.map(({ key, label, suffix }) => {
@@ -34,11 +34,13 @@ export function SpecTable({ specs }: Props) {
             const display =
               typeof value === "number" ? `${value}${suffix ?? ""}` : String(value);
             return (
-              <tr key={key} className="border-b border-border last:border-0">
-                <th className="w-2/5 bg-card-muted px-4 py-3 text-left font-medium text-muted">
+              <tr key={key} className="border-b border-border last:border-0 dark:border-border-strong/80">
+                <th className="w-2/5 bg-card-muted px-4 py-3 text-left font-medium text-muted dark:bg-card dark:text-stone-300">
                   {label}
                 </th>
-                <td className="px-4 py-3 text-foreground">{display}</td>
+                <td className="bg-card/50 px-4 py-3 text-foreground dark:bg-card-muted/40">
+                  {display}
+                </td>
               </tr>
             );
           })}

@@ -39,7 +39,9 @@ function CompareSlot({ index, tank, active, onSelect, onRemove }: SlotProps) {
     return (
       <div
         className={`relative flex flex-col overflow-hidden rounded-xl border bg-card transition ${
-          active ? "border-accent ring-2 ring-ring" : "border-border"
+          active
+            ? "border-accent ring-2 ring-accent/50 dark:shadow-[0_0_12px_rgba(251,191,36,0.1)]"
+            : "border-border dark:border-border-strong"
         }`}
       >
         <div className="relative aspect-[4/3] bg-card-muted">
@@ -71,8 +73,8 @@ function CompareSlot({ index, tank, active, onSelect, onRemove }: SlotProps) {
       onClick={onSelect}
       className={`flex min-h-[220px] flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed p-4 transition ${
         active
-          ? "border-accent bg-accent-muted/50 text-accent"
-          : "border-border bg-card-muted/30 text-muted hover:border-accent/40 hover:bg-card-muted hover:text-foreground"
+          ? "border-accent bg-accent-muted text-accent ring-1 ring-inset ring-accent/35"
+          : "border-border-strong bg-card-muted/50 text-muted hover:border-accent/50 hover:bg-card-muted hover:text-foreground dark:text-stone-300"
       }`}
     >
       <span className="flex h-10 w-10 items-center justify-center rounded-full border border-current text-xl">
@@ -177,7 +179,7 @@ export function ComparePicker() {
 
   return (
     <div className="space-y-10">
-      <div className="rounded-xl border border-border bg-card-muted/40 p-4 sm:p-6">
+      <div className="rounded-xl border border-border bg-card-muted/40 p-4 dark:border-border-strong dark:bg-card/80 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-accent">

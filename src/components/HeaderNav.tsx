@@ -19,8 +19,8 @@ function NavLink({
       href={href}
       className={`relative rounded-lg px-4 py-2 text-sm font-medium transition ${
         active
-          ? "bg-accent-muted text-accent"
-          : "text-muted hover:bg-card-muted hover:text-foreground"
+          ? "bg-accent-muted font-semibold text-accent shadow-sm ring-1 ring-inset ring-accent/40 dark:shadow-[0_0_14px_rgba(251,191,36,0.12)]"
+          : "text-muted hover:bg-card-muted hover:text-foreground dark:hover:text-heading"
       }`}
       aria-current={active ? "page" : undefined}
     >

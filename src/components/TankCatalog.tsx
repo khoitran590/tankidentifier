@@ -144,7 +144,7 @@ export function TankCatalog({ tanks }: Props) {
       <CatalogScrollEnhancements />
 
       <div
-        className="catalog-toolbar sticky z-30 -mx-4 space-y-3 border-b border-border/70 bg-background/90 px-4 py-3 shadow-[0_8px_24px_-12px_var(--shadow)] backdrop-blur-xl sm:-mx-6 sm:px-6"
+        className="catalog-toolbar sticky z-30 -mx-4 space-y-3 border-b border-border/70 bg-background/90 px-4 py-3 shadow-[0_8px_24px_-12px_var(--shadow)] backdrop-blur-xl dark:border-border-strong sm:-mx-6 sm:px-6"
         style={{ top: "calc(3.25rem + env(safe-area-inset-top, 0px))" }}
       >
         <div className="flex gap-2">
@@ -195,7 +195,7 @@ export function TankCatalog({ tanks }: Props) {
                 id={filterPanelId}
                 role="dialog"
                 aria-label="Catalog filters"
-                className="absolute right-0 top-full z-40 mt-2 w-72 rounded-xl border border-border bg-card p-4 shadow-lg shadow-[var(--shadow)]"
+                className="absolute right-0 top-full z-40 mt-2 w-72 rounded-xl border border-border bg-card p-4 shadow-lg shadow-[var(--shadow)] dark:border-border-strong"
               >
                 <div className="mb-3 flex items-center justify-between">
                   <span className="text-sm font-semibold text-heading">Filters</span>
