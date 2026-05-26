@@ -26,5 +26,15 @@ service cloud.firestore {
       allow read: if true;
       allow create, update, delete: if isAdmin();
     }
+
+    match /catalogTanks/{tankId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /tankOverrides/{slug} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
   }
 }

@@ -51,12 +51,26 @@ export function PatchNotesPage() {
           <p className="text-sm text-accent-foreground">
             Admin: publish catalog updates for everyone to read.
           </p>
-          <Link
-            href="/patch-notes/new"
-            className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white dark:text-stone-950"
-          >
-            + New patch note
-          </Link>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href="/admin/catalog"
+              className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground hover:bg-card-muted"
+            >
+              Manage catalog
+            </Link>
+            <Link
+              href="/admin/catalog/new"
+              className="rounded-lg border border-accent/50 bg-card px-4 py-2 text-sm font-semibold text-accent hover:bg-accent-muted"
+            >
+              + Add catalog tank
+            </Link>
+            <Link
+              href="/patch-notes/new"
+              className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white dark:text-stone-950"
+            >
+              + New patch note
+            </Link>
+          </div>
         </div>
       )}
 

@@ -2,12 +2,18 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { getAuthErrorMessage } from "@/lib/auth-errors";
 import {
-  createPatchNote,
-  updatePatchNote,
-  type PatchNoteInput,
-} from "@/lib/patch-notes";
+  PatchNoteCatalogSection,
+  type CatalogAddDraft,
+  type CatalogEditDraft,
+} from "@/components/PatchNoteCatalogSection";
+import { getAuthErrorMessage } from "@/lib/auth-errors";
+import type { PatchNoteInput } from "@/lib/patch-notes";
+import {
+  publishPatchNote,
+  updatePublishedPatchNote,
+} from "@/lib/patch-note-publish";
+import { useAuth } from "@/contexts/AuthContext";
 import type { PatchNote, SpecUpdate, TankAddition } from "@/types/patch-note";
 
 type Props = {
@@ -27,6 +33,7 @@ function emptySpec(): SpecUpdate {
 
 export function PatchNoteForm({ initial }: Props) {
   const router = useRouter();
+  const { user } = useAuth();
   const isEdit = Boolean(initial);
 
   const [title, setTitle] = useState(initial?.title ?? "");
@@ -38,10 +45,12 @@ export function PatchNoteForm({ initial }: Props) {
   const [specUpdates, setSpecUpdates] = useState<SpecUpdate[]>(
     initial?.specUpdates.length ? initial.specUpdates : [],
   );
+  const [catalogAdds, setCatalogAdds] = useState<CatalogAddDraft[]>([]);
+  const [catalogEdits, setCatalogEdits] = useState<CatalogEditDraft[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
-  function buildInput(): PatchNoteInput {
+  function buildNoteInput(): PatchNoteInput {
     return {
       title: title.trim(),
       version: version.trim(),
@@ -56,14 +65,19 @@ export function PatchNoteForm({ initial }: Props) {
     setError(null);
     setSubmitting(true);
 
+    const payload = {
+      note: buildNoteInput(),
+      catalogAdds: catalogAdds.filter((d) => d.name.trim()),
+      catalogEdits: catalogEdits.filter((d) => d.slug && d.name.trim()),
+    };
+
     try {
       if (isEdit && initial) {
-        await updatePatchNote(initial.id, buildInput());
-        router.push("/patch-notes");
+        await updatePublishedPatchNote(initial.id, payload, user?.uid);
       } else {
-        await createPatchNote(buildInput());
-        router.push("/patch-notes");
+        await publishPatchNote(payload, user?.uid);
       }
+      router.push("/patch-notes");
       router.refresh();
     } catch (err: unknown) {
       setError(getAuthErrorMessage(err));
@@ -73,7 +87,7 @@ export function PatchNoteForm({ initial }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-2xl space-y-8">
+    <form onSubmit={handleSubmit} className="mx-auto max-w-3xl space-y-8">
       <section className="rounded-xl border border-border bg-card p-6 space-y-4">
         <h2 className="text-lg font-semibold text-heading">Update info</h2>
         <label className="block text-sm">
@@ -106,94 +120,94 @@ export function PatchNoteForm({ initial }: Props) {
         </label>
       </section>
 
+      <PatchNoteCatalogSection
+        catalogAdds={catalogAdds}
+        onCatalogAddsChange={setCatalogAdds}
+        catalogEdits={catalogEdits}
+        onCatalogEditsChange={setCatalogEdits}
+      />
+
       <section className="rounded-xl border border-border bg-card p-6">
         <div className="flex items-center justify-between gap-2">
-          <h2 className="text-lg font-semibold text-heading">New tanks</h2>
+          <div>
+            <h2 className="text-lg font-semibold text-heading">Extra changelog mentions</h2>
+            <p className="mt-1 text-sm text-muted">
+              Optional text-only rows (tanks already handled above are listed automatically).
+            </p>
+          </div>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
           <button
             type="button"
             onClick={() => setNewTanks((t) => [...t, emptyTank()])}
             className="text-sm font-medium text-accent hover:text-accent-hover"
           >
-            + Add row
+            + Mention new tank
           </button>
-        </div>
-        {newTanks.length === 0 ? (
-          <p className="mt-3 text-sm text-muted">No new tanks listed for this update.</p>
-        ) : (
-          <div className="mt-4 space-y-4">
-            {newTanks.map((tank, index) => (
-            <div
-              key={index}
-              className="grid gap-3 rounded-lg border border-border bg-card-muted p-4 sm:grid-cols-2"
-            >
-              <input
-                className={inputClass}
-                placeholder="Tank name *"
-                value={tank.name}
-                onChange={(e) => {
-                  const next = [...newTanks];
-                  next[index] = { ...tank, name: e.target.value };
-                  setNewTanks(next);
-                }}
-              />
-              <input
-                className={inputClass}
-                placeholder="Slug (optional, e.g. m1a2_abrams)"
-                value={tank.slug ?? ""}
-                onChange={(e) => {
-                  const next = [...newTanks];
-                  next[index] = { ...tank, slug: e.target.value };
-                  setNewTanks(next);
-                }}
-              />
-              <input
-                className={inputClass}
-                placeholder="Country"
-                value={tank.country ?? ""}
-                onChange={(e) => {
-                  const next = [...newTanks];
-                  next[index] = { ...tank, country: e.target.value };
-                  setNewTanks(next);
-                }}
-              />
-              <input
-                className={inputClass}
-                placeholder="Short note"
-                value={tank.note ?? ""}
-                onChange={(e) => {
-                  const next = [...newTanks];
-                  next[index] = { ...tank, note: e.target.value };
-                  setNewTanks(next);
-                }}
-              />
-              <button
-                type="button"
-                className="text-xs text-muted hover:text-red-500 sm:col-span-2"
-                onClick={() => setNewTanks((t) => t.filter((_, i) => i !== index))}
-              >
-                Remove
-              </button>
-            </div>
-            ))}
-          </div>
-        )}
-      </section>
-
-      <section className="rounded-xl border border-border bg-card p-6">
-        <div className="flex items-center justify-between gap-2">
-          <h2 className="text-lg font-semibold text-heading">Spec updates</h2>
           <button
             type="button"
             onClick={() => setSpecUpdates((s) => [...s, emptySpec()])}
             className="text-sm font-medium text-accent hover:text-accent-hover"
           >
-            + Add row
+            + Mention spec change
           </button>
         </div>
-        {specUpdates.length === 0 ? (
-          <p className="mt-3 text-sm text-muted">No spec changes in this update.</p>
-        ) : (
-          <div className="mt-4 space-y-4">
+        {(newTanks.length > 0 || specUpdates.length > 0) && (
+          <div className="mt-4 space-y-6">
+            {newTanks.map((tank, index) => (
+              <div
+                key={index}
+                className="grid gap-3 rounded-lg border border-border bg-card-muted p-4 sm:grid-cols-2"
+              >
+                <input
+                  className={inputClass}
+                  placeholder="Tank name *"
+                  value={tank.name}
+                  onChange={(e) => {
+                    const next = [...newTanks];
+                    next[index] = { ...tank, name: e.target.value };
+                    setNewTanks(next);
+                  }}
+                />
+                <input
+                  className={inputClass}
+                  placeholder="Slug (optional)"
+                  value={tank.slug ?? ""}
+                  onChange={(e) => {
+                    const next = [...newTanks];
+                    next[index] = { ...tank, slug: e.target.value };
+                    setNewTanks(next);
+                  }}
+                />
+                <input
+                  className={inputClass}
+                  placeholder="Country"
+                  value={tank.country ?? ""}
+                  onChange={(e) => {
+                    const next = [...newTanks];
+                    next[index] = { ...tank, country: e.target.value };
+                    setNewTanks(next);
+                  }}
+                />
+                <input
+                  className={inputClass}
+                  placeholder="Short note"
+                  value={tank.note ?? ""}
+                  onChange={(e) => {
+                    const next = [...newTanks];
+                    next[index] = { ...tank, note: e.target.value };
+                    setNewTanks(next);
+                  }}
+                />
+                <button
+                  type="button"
+                  className="text-xs text-muted hover:text-red-500 sm:col-span-2"
+                  onClick={() => setNewTanks((t) => t.filter((_, i) => i !== index))}
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
             {specUpdates.map((item, index) => (
               <div
                 key={index}
@@ -223,7 +237,7 @@ export function PatchNoteForm({ initial }: Props) {
                 </div>
                 <textarea
                   className={`${inputClass} min-h-[72px]`}
-                  placeholder="What changed? (weight, armament, speed, etc.)"
+                  placeholder="What changed?"
                   value={item.change}
                   onChange={(e) => {
                     const next = [...specUpdates];
@@ -234,9 +248,7 @@ export function PatchNoteForm({ initial }: Props) {
                 <button
                   type="button"
                   className="text-xs text-muted hover:text-red-500"
-                  onClick={() =>
-                    setSpecUpdates((s) => s.filter((_, i) => i !== index))
-                  }
+                  onClick={() => setSpecUpdates((s) => s.filter((_, i) => i !== index))}
                 >
                   Remove
                 </button>

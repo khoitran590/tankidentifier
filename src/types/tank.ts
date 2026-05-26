@@ -17,6 +17,8 @@ export type TankSpecs = {
   armor: string;
 };
 
+export type TankSource = "static" | "catalog";
+
 export type Tank = {
   id: string;
   slug: string;
@@ -24,4 +26,6 @@ export type Tank = {
   images: string[];
   thumbnail: string;
   specs: TankSpecs;
+  /** Omitted for tanks from `tanks.json`. */
+  source?: TankSource;
 };

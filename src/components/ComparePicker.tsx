@@ -5,7 +5,9 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CompareTable } from "@/components/CompareTable";
-import { getAllTanks, getTanksBySlugs, tankPath } from "@/lib/tanks";
+import { useMergedCatalogTanks } from "@/hooks/useMergedCatalogTanks";
+import { getTanksBySlugsFromList } from "@/lib/merge-tanks";
+import { getAllTanks, tankPath } from "@/lib/tanks";
 import type { Tank } from "@/types/tank";
 
 const MAX = 4;
@@ -84,7 +86,8 @@ function CompareSlot({ index, tank, active, onSelect, onRemove }: SlotProps) {
 export function ComparePicker() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const allTanks = getAllTanks();
+  const staticTanks = getAllTanks();
+  const { tanks: allTanks } = useMergedCatalogTanks(staticTanks);
   const searchRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -108,7 +111,10 @@ export function ComparePicker() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  const selectedTanks = useMemo(() => getTanksBySlugs(selected), [selected]);
+  const selectedTanks = useMemo(
+    () => getTanksBySlugsFromList(allTanks, selected),
+    [allTanks, selected],
+  );
   const selectedSet = useMemo(() => new Set(selected), [selected]);
 
   const suggestions = useMemo(() => {

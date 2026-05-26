@@ -151,11 +151,52 @@ match /patchNotes/{noteId} {
 2. Click **+ New patch note**
 3. Fill title, version, summary, new tanks, and spec changes → **Publish update**
 
+## 9. Public catalog tanks (admin)
+
+Admins can add tanks to the **live public catalog** (not only private **My tanks** or patch-note text).
+
+| Piece | Location |
+|-------|----------|
+| Firestore | `catalogTanks/{tankId}` — public read, admin write |
+| Storage | `catalog/{tankId}/cover.*` — public read, admin write |
+| UI | `/admin/catalog/new` (also **+ Add catalog tank** on Patch notes when admin) |
+
+Merged with the static `tanks.json` dataset on the home catalog, compare tool, and `/tanks/[slug]` detail pages.
+
+### Rules
+
+Republish **`firestore.rules`** and **`storage.rules`** from the repo root. Storage admin checks use `users/{uid}.isAdmin` in Firestore (set `isAdmin: true` on your user doc).
+
+### Add or edit tanks
+
+| Route | Purpose |
+|-------|---------|
+| `/admin/catalog/new` | Add a tank with any number of photos |
+| `/admin/catalog` | List and edit admin-added tanks |
+| `/admin/catalog/{id}/edit` | Update live catalog tank (Firestore) |
+| `/admin/dataset/{slug}/edit` | Override built-in `tanks.json` entry (specs + photos) |
+
+**Patch notes:** On **+ New patch note**, use **Add tanks to catalog** (multiple full entries in one release) and **Update existing catalog tanks** (pick any dataset or live tank, edit specs/photos). Publishing applies catalog changes and auto-fills the changelog.
+
+Firestore collection `tankOverrides/{slug}` stores admin edits to static dataset tanks (public read, admin write).
+
+1. Log in as admin
+2. **Patch notes** → **Manage catalog** or **+ Add catalog tank**
+3. Upload multiple files and/or paste image URLs, then fill specs → **Add to catalog**
+4. On a catalog tank’s public page, use **Edit catalog entry** (admins only)
+
+Photos are stored in Firestore as `imageUrls` (array). Older entries with a single `imageUrl` still work.
+
+Optional: publish a **patch note** describing the addition so visitors see it in **Patch notes**.
+
 ## 7. App routes
 
 | Route | Purpose |
 |-------|---------|
 | `/login` | Log in |
 | `/signup` | Create account |
+| `/admin/catalog` | Admin: manage catalog tanks |
+| `/admin/catalog/new` | Admin: add tank to public catalog |
+| `/admin/catalog/{id}/edit` | Admin: edit catalog tank |
 
 The header **Log in** button links to `/login`. Sign up is linked from the login page.

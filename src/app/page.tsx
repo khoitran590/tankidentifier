@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { PageShell } from "@/components/PageShell";
-import { TankCatalog } from "@/components/TankCatalog";
+import { MergedTankCatalog } from "@/components/MergedTankCatalog";
 import { getAllTanks } from "@/lib/tanks";
 
 function CatalogFallback() {
@@ -18,7 +18,7 @@ export default function HomePage() {
         className="pb-6 sm:pb-8"
       >
         <Suspense fallback={<CatalogFallback />}>
-          <TankCatalog tanks={tanks} />
+          <MergedTankCatalog staticTanks={tanks} />
         </Suspense>
       </PageShell>
     </div>

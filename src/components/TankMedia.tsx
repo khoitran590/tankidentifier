@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { getDisplayImages } from "@/lib/tank-media";
+import { getDisplayImages, getGalleryImages } from "@/lib/tank-media";
 import type { Tank } from "@/types/tank";
 
 type ImageSizes = {
@@ -70,12 +70,12 @@ export function TankCardMedia({ tank, priority = false }: TankCardMediaProps) {
           />
         </div>
       )}
-      {hasAlt && (
+      {tank.images.length > 1 && (
         <span
           className="pointer-events-none absolute bottom-2 right-2 rounded bg-background/85 px-1.5 py-0.5 text-[10px] font-medium text-muted backdrop-blur-sm"
           aria-hidden
         >
-          2 photos
+          {tank.images.length} photos
         </span>
       )}
     </div>
@@ -86,50 +86,57 @@ type TankGalleryProps = {
   tank: Tank;
 };
 
-/** Detail page: two equal panels with optional thumbnail strip. */
+/** Detail page: one large image with optional thumbnail strip for multiple photos. */
 export function TankGallery({ tank }: TankGalleryProps) {
-  const images = getDisplayImages(tank);
+  const images = getGalleryImages(tank);
   const [active, setActive] = useState(0);
-  const hasAlt = images[0] !== images[1];
+
+  if (images.length === 0) return null;
+
+  const activeSrc = images[active] ?? images[0];
 
   return (
     <div className="space-y-3">
-      <div
-        className={`grid gap-3 ${hasAlt ? "grid-cols-2" : "grid-cols-1"}`}
-        role={hasAlt ? "tablist" : undefined}
-        aria-label={hasAlt ? "Tank photos" : undefined}
-      >
-        {images.map((src, i) => (
-          <button
-            key={src}
-            type="button"
-            role={hasAlt ? "tab" : undefined}
-            aria-selected={hasAlt ? active === i : undefined}
-            aria-label={`Photo ${i + 1}`}
-            onClick={() => hasAlt && setActive(i)}
-            className={`relative overflow-hidden rounded-xl border bg-card-muted transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-              hasAlt
-                ? active === i
-                  ? "border-accent ring-1 ring-ring aspect-[4/3]"
-                  : "border-border aspect-[4/3] opacity-90 hover:border-border-strong"
-                : "border-border aspect-[16/10] sm:aspect-[16/10]"
-            }`}
-          >
-            <Image
-              src={src}
-              alt={`${tank.name} — photo ${i + 1}`}
-              fill
-              className="object-cover"
-              sizes={SIZES.gallery}
-              priority={i === 0}
-            />
-          </button>
-        ))}
+      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-card-muted sm:aspect-[4/3]">
+        <Image
+          src={activeSrc}
+          alt={`${tank.name} — photo ${active + 1}`}
+          fill
+          className="object-cover"
+          sizes={SIZES.gallery}
+          priority
+        />
       </div>
-      {hasAlt && (
-        <p className="text-center text-xs text-subtle sm:text-left">
-          Tap a photo to highlight · {images.length} reference images
-        </p>
+
+      {images.length > 1 && (
+        <>
+          <div
+            className="flex gap-2 overflow-x-auto pb-1"
+            role="tablist"
+            aria-label="Tank photos"
+          >
+            {images.map((src, i) => (
+              <button
+                key={`${i}-${src}`}
+                type="button"
+                role="tab"
+                aria-selected={active === i}
+                aria-label={`Photo ${i + 1}`}
+                onClick={() => setActive(i)}
+                className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  active === i
+                    ? "border-accent ring-1 ring-ring"
+                    : "border-border opacity-80 hover:border-border-strong hover:opacity-100"
+                }`}
+              >
+                <Image src={src} alt="" fill className="object-cover" sizes={SIZES.thumb} />
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-subtle">
+            {images.length} reference image{images.length === 1 ? "" : "s"} · select a thumbnail
+          </p>
+        </>
       )}
     </div>
   );
@@ -141,14 +148,14 @@ type TankThumbStripProps = {
 };
 
 export function TankThumbStrip({ tank, className = "" }: TankThumbStripProps) {
-  const [primary, secondary] = getDisplayImages(tank);
-  if (primary === secondary) return null;
+  const images = getGalleryImages(tank);
+  if (images.length <= 1) return null;
 
   return (
-    <div className={`flex gap-2 ${className}`}>
-      {[primary, secondary].map((src, i) => (
+    <div className={`flex gap-2 overflow-x-auto ${className}`}>
+      {images.slice(0, 6).map((src, i) => (
         <div
-          key={src}
+          key={`${i}-${src}`}
           className="relative h-14 w-20 shrink-0 overflow-hidden rounded-md border border-border"
         >
           <Image src={src} alt="" fill className="object-cover" sizes={SIZES.thumb} />
