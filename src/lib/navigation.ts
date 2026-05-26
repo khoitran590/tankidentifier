@@ -21,5 +21,8 @@ export function isNavActive(pathname: string, href: string): boolean {
   if (href === "/") {
     return pathname === "/" || pathname.startsWith("/tanks/");
   }
+  if (href === "/my-tanks") {
+    return pathname === "/my-tanks" || pathname.startsWith("/my-tanks/");
+  }
   return pathname === href || pathname.startsWith(`${href}/`);
 }

@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { HeaderAuth } from "@/components/HeaderAuth";
 import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { isNavActive, MAIN_NAV } from "@/lib/navigation";
+import { HeaderNav } from "@/components/HeaderNav";
+import { HeaderNavMobile } from "@/components/HeaderNavMobile";
 
 export function Header() {
   const pathname = usePathname();
@@ -27,21 +29,10 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
         <Logo />
 
-        <nav
-          className="hidden items-center gap-1 md:flex"
-          aria-label="Main navigation"
-        >
-          {MAIN_NAV.map((item) => (
-            <NavLink
-              key={item.href}
-              href={item.href}
-              label={item.label}
-              active={isNavActive(pathname, item.href)}
-            />
-          ))}
-        </nav>
+        <HeaderNav />
 
         <div className="flex items-center gap-2">
+          <HeaderAuth />
           <ThemeToggle />
           <button
             type="button"
@@ -69,56 +60,11 @@ export function Header() {
             className="absolute left-0 right-0 top-full z-50 border-b border-border bg-card px-4 py-4 shadow-lg md:hidden"
             aria-label="Mobile navigation"
           >
-            <ul className="space-y-1">
-              {MAIN_NAV.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={`flex flex-col rounded-lg px-4 py-3 transition ${
-                      isNavActive(pathname, item.href)
-                        ? "bg-accent-muted text-accent"
-                        : "text-foreground hover:bg-card-muted"
-                    }`}
-                  >
-                    <span className="font-medium">{item.label}</span>
-                    {item.description && (
-                      <span className="text-xs text-muted">{item.description}</span>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <HeaderNavMobile />
           </nav>
         </>
       )}
     </header>
-  );
-}
-
-function NavLink({
-  href,
-  label,
-  active,
-}: {
-  href: string;
-  label: string;
-  active: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      className={`relative rounded-lg px-4 py-2 text-sm font-medium transition ${
-        active
-          ? "bg-accent-muted text-accent"
-          : "text-muted hover:bg-card-muted hover:text-foreground"
-      }`}
-      aria-current={active ? "page" : undefined}
-    >
-      {label}
-      {active && (
-        <span className="absolute bottom-0 left-1/2 h-0.5 w-6 -translate-x-1/2 translate-y-2 rounded-full bg-accent" />
-      )}
-    </Link>
   );
 }
 

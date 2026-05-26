@@ -10,6 +10,8 @@ Deploy on **Vercel** for the web. On iPhone, install via **Safari → Add to Hom
 - **Detail pages** — Image gallery and specification tables per tank
 - **Compare** — Visual slot picker; select 2–4 tanks and view metrics side by side
 - **PWA** — Install on iPhone from Safari (see [docs/PWA.md](docs/PWA.md))
+- **Accounts** — Email sign-up / log-in with Firebase Auth; profiles in Firestore (see [docs/FIREBASE.md](docs/FIREBASE.md))
+- **My tanks** — Logged-in users can add custom tanks with photos and full specs (Firestore + Storage)
 
 ## Prerequisites
 
@@ -29,6 +31,8 @@ npm run dev
 On Windows you may have two Pythons (`python` = 3.12, `python3` = Store 3.10). This project uses **`python`** for npm scripts — run `npm run setup:python` so deps install on that interpreter.
 
 Open [http://localhost:3000](http://localhost:3000).
+
+Optional: copy `.env.example` to `.env.local` and add Firebase keys to enable **Log in** / **Sign up** ([docs/FIREBASE.md](docs/FIREBASE.md)).
 
 See [docs/GITHUB_PUSH.md](docs/GITHUB_PUSH.md) if `git push` fails due to large files.
 

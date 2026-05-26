@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { FirebaseAnalytics } from "@/components/FirebaseAnalytics";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
@@ -58,12 +60,15 @@ export default function RootLayout({
     >
       <body className="native-app flex min-h-full flex-col bg-background text-foreground">
         <ThemeProvider>
-          <PwaInstallPrompt />
-          <Header />
+          <AuthProvider>
+            <FirebaseAnalytics />
+            <PwaInstallPrompt />
+            <Header />
           <main className="flex-1 pb-[env(safe-area-inset-bottom)]">
             {children}
           </main>
           <Footer />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
