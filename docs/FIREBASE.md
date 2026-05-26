@@ -80,7 +80,7 @@ On **sign up**, a document is created at:
 
 Sign-in uses Firebase Auth only; Firestore is updated on registration.
 
-## 7. My tanks (logged-in users)
+## 8. My tanks (logged-in users)
 
 Signed-in users can add custom tanks at **My tanks** (`/my-tanks`):
 
@@ -111,7 +111,47 @@ Click **Publish**. Without this, photo uploads on **Add tank** fail; image URLs 
 
 Use **`firestore.rules`** at the project root (includes `users/{userId}/tanks/{tankId}`). Republish if you only added the profile rule earlier.
 
-## 6. App routes
+## 6. Patch notes (admin)
+
+Everyone can read **Patch notes** at `/patch-notes`. Only **admins** can create, edit, or delete entries (stored in Firestore collection `patchNotes`).
+
+### Make yourself admin (pick one)
+
+**Option A — Environment variable (easiest for local dev)**
+
+1. Firebase Console → **Authentication → Users** → copy your **User UID**
+2. In `.env.local` add:
+   ```bash
+   NEXT_PUBLIC_ADMIN_UIDS=your-uid-here
+   ```
+3. Restart `npm run dev`
+
+**Option B — Firestore flag**
+
+1. Firestore → **Data** → `users` → your user document
+2. Add field: `isAdmin` = `true` (boolean)
+3. Republish **`firestore.rules`** (includes `patchNotes` rules)
+
+### Firestore rules for patch notes
+
+Republish **`firestore.rules`** from the repo root. It must include:
+
+```text
+match /patchNotes/{noteId} {
+  allow read: if true;
+  allow create, update, delete: if isAdmin();
+}
+```
+
+(`isAdmin()` reads `users/{uid}.isAdmin == true` in Firestore.)
+
+### Publishing an update
+
+1. Log in as admin → open **Patch notes**
+2. Click **+ New patch note**
+3. Fill title, version, summary, new tanks, and spec changes → **Publish update**
+
+## 7. App routes
 
 | Route | Purpose |
 |-------|---------|

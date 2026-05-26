@@ -12,6 +12,7 @@ Deploy on **Vercel** for the web. On iPhone, install via **Safari → Add to Hom
 - **PWA** — Install on iPhone from Safari (see [docs/PWA.md](docs/PWA.md))
 - **Accounts** — Email sign-up / log-in with Firebase Auth; profiles in Firestore (see [docs/FIREBASE.md](docs/FIREBASE.md))
 - **My tanks** — Logged-in users can add custom tanks with photos and full specs (Firestore + Storage)
+- **Patch notes** — Admin-published changelog of new tanks and spec updates (Firestore)
 
 ## Prerequisites
 

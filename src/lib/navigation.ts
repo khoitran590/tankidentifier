@@ -15,6 +15,11 @@ export const MAIN_NAV: NavItem[] = [
     label: "Compare",
     description: "Side-by-side specs",
   },
+  {
+    href: "/patch-notes",
+    label: "Patch notes",
+    description: "Catalog updates",
+  },
 ];
 
 export function isNavActive(pathname: string, href: string): boolean {
@@ -23,6 +28,9 @@ export function isNavActive(pathname: string, href: string): boolean {
   }
   if (href === "/my-tanks") {
     return pathname === "/my-tanks" || pathname.startsWith("/my-tanks/");
+  }
+  if (href === "/patch-notes") {
+    return pathname === "/patch-notes" || pathname.startsWith("/patch-notes/");
   }
   return pathname === href || pathname.startsWith(`${href}/`);
 }
