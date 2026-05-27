@@ -16,11 +16,26 @@ Deploy on **Vercel** for the web. On iPhone, install via **Safari → Add to Hom
 
 ## Prerequisites
 
-- Node.js 20+
-- Python 3.10+ (for dataset preparation)
+- Node.js 20+ **or** [Docker](docs/DOCKER.md)
+- Python 3.10+ (for dataset preparation on the host)
 - Kaggle account ([Kaggle API](https://github.com/Kaggle/kaggle-api))
 
-## Setup
+## Docker (recommended for running the app)
+
+```bash
+cp env.example .env.local   # optional Firebase keys
+npm run docker:up
+```
+
+Development with hot reload:
+
+```bash
+npm run docker:dev
+```
+
+See [docs/DOCKER.md](docs/DOCKER.md) for production vs dev, env vars, and dataset prep.
+
+## Setup (local Node)
 
 ```bash
 npm install
@@ -33,7 +48,7 @@ On Windows you may have two Pythons (`python` = 3.12, `python3` = Store 3.10). T
 
 Open [http://localhost:3000](http://localhost:3000).
 
-Optional: copy `.env.example` to `.env.local` and add Firebase keys to enable **Log in** / **Sign up** ([docs/FIREBASE.md](docs/FIREBASE.md)).
+Optional: copy `env.example` to `.env.local` and add Firebase keys to enable **Log in** / **Sign up** ([docs/FIREBASE.md](docs/FIREBASE.md)).
 
 See [docs/GITHUB_PUSH.md](docs/GITHUB_PUSH.md) if `git push` fails due to large files.
 
@@ -52,6 +67,9 @@ See [docs/GITHUB_PUSH.md](docs/GITHUB_PUSH.md) if `git push` fails due to large 
 | `npm run prepare-data` | Full Kaggle dataset → `public/tanks/` |
 | `npm run prepare-data:deploy` | Two images per tank (~60MB repo) |
 | `npm run patch-data:two-images` | Update `tanks.json` paths only (no Kaggle download) |
+| `npm run docker:up` | Production container on port 3000 |
+| `npm run docker:dev` | Dev container with hot reload |
+| `npm run docker:down` | Stop Docker Compose services |
 
 ## Tech stack
 

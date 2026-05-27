@@ -10,7 +10,10 @@
     "setup:python": "python -m pip install -r requirements.txt",
     "prepare-data": "npm run setup:python && python scripts/prepare_dataset.py",
     "prepare-data:deploy": "npm run setup:python && python scripts/prepare_dataset.py --max-images 2",
-    "patch-data:two-images": "python scripts/patch_two_images_json.py"
+    "patch-data:two-images": "python scripts/patch_two_images_json.py",
+    "docker:up": "node scripts/docker-run.mjs compose --env-file .env.local up --build",
+    "docker:dev": "node scripts/docker-run.mjs compose --env-file .env.local --profile dev up --build",
+    "docker:down": "node scripts/docker-run.mjs compose down"
   },
   "dependencies": {
     "firebase": "^12.13.0",

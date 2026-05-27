@@ -142,118 +142,117 @@ export function TankCatalog({ tanks }: Props) {
   return (
     <div className="catalog-page space-y-6 sm:space-y-8">
       <CatalogScrollEnhancements />
-
       <div
         className="catalog-toolbar sticky z-30 -mx-4 space-y-3 border-b border-border/70 bg-background/90 px-4 py-3 shadow-[0_8px_24px_-12px_var(--shadow)] backdrop-blur-xl dark:border-border-strong sm:-mx-6 sm:px-6"
         style={{ top: "calc(3.25rem + env(safe-area-inset-top, 0px))" }}
       >
         <div className="flex gap-2">
-          <label className="relative min-w-0 flex-1">
-            <span className="sr-only">Search tanks</span>
-            <SearchIcon className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-subtle" />
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => onQueryChange(e.target.value)}
-              placeholder="Search by name, type, or country..."
-              className={searchClass}
-              aria-busy={isStale}
-            />
-            {query && (
+            <label className="relative min-w-0 flex-1">
+              <span className="sr-only">Search tanks</span>
+              <SearchIcon className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-subtle" />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => onQueryChange(e.target.value)}
+                placeholder="Search by name, type, or country..."
+                className={searchClass}
+                aria-busy={isStale}
+              />
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => onQueryChange("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-md px-2 py-0.5 text-xs font-medium text-muted hover:text-foreground"
+                  aria-label="Clear search"
+                >
+                  Clear
+                </button>
+              )}
+            </label>
+
+            <div ref={filterWrapRef} className="relative shrink-0">
               <button
                 type="button"
-                onClick={() => onQueryChange("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-md px-2 py-0.5 text-xs font-medium text-muted hover:bg-card-muted hover:text-foreground"
-                aria-label="Clear search"
+                onClick={() => setFiltersOpen((o) => !o)}
+                className={`flex h-full min-h-[46px] items-center gap-1.5 rounded-xl border px-3 text-sm font-medium ${
+                  filtersOpen || panelFiltersActive
+                    ? "border-accent bg-accent-muted text-accent"
+                    : "border-border bg-card text-muted hover:border-border-strong hover:bg-card-muted hover:text-foreground"
+                }`}
+                aria-expanded={filtersOpen}
+                aria-controls={filterPanelId}
               >
-                Clear
+                <FilterIcon />
+                <span className="hidden sm:inline">Filter</span>
+                {panelFiltersActive && (
+                  <span className="flex h-2 w-2 rounded-full bg-accent" aria-hidden />
+                )}
               </button>
-            )}
-          </label>
 
-          <div ref={filterWrapRef} className="relative shrink-0">
-            <button
-              type="button"
-              onClick={() => setFiltersOpen((o) => !o)}
-              className={`flex h-full min-h-[46px] items-center gap-1.5 rounded-xl border px-3 text-sm font-medium transition ${
-                filtersOpen || panelFiltersActive
-                  ? "border-accent bg-accent-muted text-accent"
-                  : "border-border bg-card text-muted hover:border-border-strong hover:bg-card-muted hover:text-foreground"
-              }`}
-              aria-expanded={filtersOpen}
-              aria-controls={filterPanelId}
-            >
-              <FilterIcon />
-              <span className="hidden sm:inline">Filter</span>
-              {panelFiltersActive && (
-                <span className="flex h-2 w-2 rounded-full bg-accent" aria-hidden />
+              {filtersOpen && (
+                <div
+                  id={filterPanelId}
+                  role="dialog"
+                  aria-label="Catalog filters"
+                  className="absolute right-0 top-full z-40 mt-2 w-72 rounded-xl border border-border bg-card p-4 shadow-lg shadow-[var(--shadow)] dark:border-border-strong"
+                >
+                  <div className="mb-3 flex items-center justify-between">
+                    <span className="text-sm font-semibold text-heading">Filters</span>
+                    {panelFiltersActive && (
+                      <button
+                        type="button"
+                        onClick={resetPanelFilters}
+                        className="text-xs font-medium text-accent hover:text-accent-hover"
+                      >
+                        Clear
+                      </button>
+                    )}
+                  </div>
+                  <div className="space-y-3">
+                    <label className="flex flex-col gap-1.5 text-sm">
+                      <span className="font-medium text-muted">Country</span>
+                      <select
+                        value={country}
+                        onChange={(e) => onCountryChange(e.target.value)}
+                        className={fieldClass}
+                        aria-busy={isStale}
+                      >
+                        {countries.map((c) => (
+                          <option key={c} value={c}>
+                            {c === "all" ? "All countries" : c}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                    <label className="flex flex-col gap-1.5 text-sm">
+                      <span className="font-medium text-muted">Classification</span>
+                      <select
+                        value={classification}
+                        onChange={(e) => onClassificationChange(e.target.value)}
+                        className={fieldClass}
+                        aria-busy={isStale}
+                      >
+                        {classifications.map((t) => (
+                          <option key={t} value={t}>
+                            {t === "all" ? "All classifications" : t}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  </div>
+                </div>
               )}
-            </button>
-
-            {filtersOpen && (
-              <div
-                id={filterPanelId}
-                role="dialog"
-                aria-label="Catalog filters"
-                className="absolute right-0 top-full z-40 mt-2 w-72 rounded-xl border border-border bg-card p-4 shadow-lg shadow-[var(--shadow)] dark:border-border-strong"
-              >
-                <div className="mb-3 flex items-center justify-between">
-                  <span className="text-sm font-semibold text-heading">Filters</span>
-                  {panelFiltersActive && (
-                    <button
-                      type="button"
-                      onClick={resetPanelFilters}
-                      className="text-xs font-medium text-accent hover:text-accent-hover"
-                    >
-                      Clear
-                    </button>
-                  )}
-                </div>
-                <div className="space-y-3">
-                  <label className="flex flex-col gap-1.5 text-sm">
-                    <span className="font-medium text-muted">Country</span>
-                    <select
-                      value={country}
-                      onChange={(e) => onCountryChange(e.target.value)}
-                      className={fieldClass}
-                      aria-busy={isStale}
-                    >
-                      {countries.map((c) => (
-                        <option key={c} value={c}>
-                          {c === "all" ? "All countries" : c}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                  <label className="flex flex-col gap-1.5 text-sm">
-                    <span className="font-medium text-muted">Classification</span>
-                    <select
-                      value={classification}
-                      onChange={(e) => onClassificationChange(e.target.value)}
-                      className={fieldClass}
-                      aria-busy={isStale}
-                    >
-                      {classifications.map((t) => (
-                        <option key={t} value={t}>
-                          {t === "all" ? "All classifications" : t}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                </div>
-              </div>
-            )}
+            </div>
           </div>
-        </div>
 
         <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
           <p
             className={`tabular-nums text-muted transition-opacity ${isStale ? "opacity-60" : ""}`}
             aria-live="polite"
           >
-            <span className="font-medium text-foreground">{filtered.length}</span>
-            {" "}
-            of {tanks.length} tanks
+              <span className="font-medium text-foreground">{filtered.length}</span>
+              {" "}
+              of {tanks.length} tanks
             {isStale && <span className="text-subtle"> · updating</span>}
           </p>
           <Link
@@ -267,24 +266,24 @@ export function TankCatalog({ tanks }: Props) {
 
         {compare.length > 0 && (
           <div className="flex flex-wrap items-center gap-2 rounded-xl border border-accent/35 bg-accent-muted/80 px-3 py-2.5">
-            <span className="text-sm font-medium text-accent-foreground">
-              {compare.length} selected for compare
-            </span>
-            <button
-              type="button"
-              onClick={() => setCompare([])}
-              className="text-xs text-muted underline-offset-2 hover:text-foreground hover:underline"
-            >
-              Clear
-            </button>
-            <button
-              type="button"
-              disabled={compare.length < 2}
-              onClick={goCompare}
-              className="ml-auto rounded-lg bg-accent px-3 py-1.5 text-xs font-semibold text-white disabled:opacity-40 dark:text-stone-950"
-            >
-              Compare now
-            </button>
+              <span className="text-sm font-medium text-accent-foreground">
+                {compare.length} selected for compare
+              </span>
+              <button
+                type="button"
+                onClick={() => setCompare([])}
+                className="text-xs text-muted underline-offset-2 hover:text-foreground hover:underline"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                disabled={compare.length < 2}
+                onClick={goCompare}
+                className="ml-auto rounded-lg bg-accent px-3 py-1.5 text-xs font-semibold text-white disabled:opacity-40 dark:text-stone-950"
+              >
+                Compare now
+              </button>
           </div>
         )}
       </div>
@@ -360,10 +359,7 @@ function FilterIcon() {
       strokeWidth="2"
       aria-hidden
     >
-      <path
-        d="M4 6h16M7 12h10M10 18h4"
-        strokeLinecap="round"
-      />
+      <path d="M4 6h16M7 12h10M10 18h4" strokeLinecap="round" />
     </svg>
   );
 }

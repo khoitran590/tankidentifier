@@ -1,0 +1,15 @@
+FROM node:20-alpine
+
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY . .
+
+ENV NEXT_TELEMETRY_DISABLED=1
+EXPOSE 3000
+
+# Bind on all interfaces so the host can reach the dev server.
+CMD ["npm", "run", "dev", "--", "-H", "0.0.0.0", "-p", "3000"]
