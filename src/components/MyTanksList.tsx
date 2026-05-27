@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { RemoteImage } from "@/components/RemoteImage";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
@@ -84,7 +84,7 @@ export function MyTanksList() {
             href={userTankPath(tank.id)}
             className="relative aspect-[4/3] bg-card-muted"
           >
-            <Image
+            <RemoteImage
               src={tank.thumbnail}
               alt={tank.name}
               fill

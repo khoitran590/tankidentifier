@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { RemoteImage } from "@/components/RemoteImage";
 import { useEffect, useRef, useState } from "react";
 import type { CatalogTankPhotosInput } from "@/lib/catalog-tanks";
 
@@ -103,7 +103,7 @@ export function CatalogTankPhotosEditor({ initialUrls = [], onChange }: Props) {
                 key={url}
                 className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border"
               >
-                <Image src={url} alt="" fill className="object-cover" sizes="200px" />
+                <RemoteImage src={url} alt="" fill className="object-cover" sizes="200px" />
                 <button
                   type="button"
                   onClick={() => removeKept(url)}
@@ -139,7 +139,7 @@ export function CatalogTankPhotosEditor({ initialUrls = [], onChange }: Props) {
                 key={`${preview}-${i}`}
                 className="relative aspect-[4/3] overflow-hidden rounded-xl border border-dashed border-accent/40"
               >
-                <Image src={preview} alt="" fill className="object-cover" sizes="200px" />
+                <RemoteImage src={preview} alt="" fill className="object-cover" sizes="200px" />
                 <span className="absolute left-1.5 top-1.5 rounded bg-background/90 px-1.5 py-0.5 text-[10px] font-medium text-accent">
                   New
                 </span>

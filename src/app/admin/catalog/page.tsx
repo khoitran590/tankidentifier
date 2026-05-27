@@ -16,7 +16,7 @@ export default function ManageCatalogPage() {
         { label: "Manage catalog" },
       ]}
       title="Manage catalog tanks"
-      description="Edit admin-added tanks: update specs, add photos, or remove images."
+      description="Edit or remove admin-added catalog tanks."
       actions={
         <Link
           href="/admin/catalog/new"

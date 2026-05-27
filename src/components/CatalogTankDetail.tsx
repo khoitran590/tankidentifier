@@ -1,14 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { PageShell } from "@/components/PageShell";
 import { SpecTable } from "@/components/SpecTable";
 import { TankGallery } from "@/components/TankMedia";
 import { TankPager } from "@/components/TankPager";
 import { useMergedCatalogTanks } from "@/hooks/useMergedCatalogTanks";
-import { catalogTankEditPath, getCatalogTankBySlug } from "@/lib/catalog-tanks";
+import {
+  catalogTankEditPath,
+  deleteCatalogTank,
+  getCatalogTankBySlug,
+} from "@/lib/catalog-tanks";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { getAdjacentTanksFromList } from "@/lib/merge-tanks";
 import { getAllTanks, tankPath } from "@/lib/tanks";
@@ -20,6 +24,7 @@ type Props = {
 };
 
 export function CatalogTankDetail({ slug }: Props) {
+  const router = useRouter();
   const { isAdmin, loading: adminLoading } = useIsAdmin();
   const staticTanks = getAllTanks();
   const { tanks: mergedTanks, loading: mergeLoading } = useMergedCatalogTanks(staticTanks);
@@ -27,6 +32,29 @@ export function CatalogTankDetail({ slug }: Props) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [missing, setMissing] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+
+  async function handleDelete() {
+    if (!tank) return;
+    if (
+      !confirm(
+        `Remove "${tank.name}" from the public catalog? This cannot be undone.`,
+      )
+    ) {
+      return;
+    }
+
+    setDeleting(true);
+    setError(null);
+    try {
+      await deleteCatalogTank(tank.id);
+      router.push("/");
+      router.refresh();
+    } catch (err: unknown) {
+      setError(getAuthErrorMessage(err));
+      setDeleting(false);
+    }
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -106,12 +134,22 @@ export function CatalogTankDetail({ slug }: Props) {
             All tanks ({mergedTanks.length})
           </Link>
           {isAdmin && !adminLoading && tank && (
-            <Link
-              href={catalogTankEditPath(tank.id)}
-              className="rounded-lg border border-accent/50 bg-accent-muted px-4 py-2 text-sm font-semibold text-accent transition hover:bg-accent-muted/80"
-            >
-              Edit catalog entry
-            </Link>
+            <>
+              <Link
+                href={catalogTankEditPath(tank.id)}
+                className="rounded-lg border border-accent/50 bg-accent-muted px-4 py-2 text-sm font-semibold text-accent transition hover:bg-accent-muted/80"
+              >
+                Edit catalog entry
+              </Link>
+              <button
+                type="button"
+                disabled={deleting}
+                onClick={() => void handleDelete()}
+                className="rounded-lg border border-red-500/50 px-4 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-500/10 disabled:opacity-50 dark:text-red-400"
+              >
+                {deleting ? "Removing…" : "Remove from catalog"}
+              </button>
+            </>
           )}
         </>
       }

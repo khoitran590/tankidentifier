@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { RemoteImage } from "@/components/RemoteImage";
 import Link from "next/link";
 import {
   COMPARE_METRICS,
@@ -65,7 +65,7 @@ export function CompareTable({ tanks, onRemove }: Props) {
               >
                 <Link href={tankPath(tank.slug)} className="group block">
                   <div className="relative mb-2 aspect-video overflow-hidden rounded-lg border border-border">
-                    <Image
+                    <RemoteImage
                       src={tank.thumbnail}
                       alt={tank.name}
                       fill

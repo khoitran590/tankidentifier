@@ -1,10 +1,14 @@
 "use client";
 
-import Image from "next/image";
+import { RemoteImage } from "@/components/RemoteImage";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { getAuthErrorMessage } from "@/lib/auth-errors";
-import { catalogTankEditPath, listCatalogTanks } from "@/lib/catalog-tanks";
+import {
+  catalogTankEditPath,
+  deleteCatalogTank,
+  listCatalogTanks,
+} from "@/lib/catalog-tanks";
 import { tankPath } from "@/lib/tanks";
 import type { Tank } from "@/types/tank";
 
@@ -12,6 +16,7 @@ export function CatalogAdminList() {
   const [tanks, setTanks] = useState<Tank[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -28,6 +33,27 @@ export function CatalogAdminList() {
   useEffect(() => {
     void load();
   }, [load]);
+
+  async function handleDelete(tank: Tank) {
+    if (
+      !confirm(
+        `Remove "${tank.name}" from the public catalog? This cannot be undone.`,
+      )
+    ) {
+      return;
+    }
+
+    setDeletingId(tank.id);
+    setError(null);
+    try {
+      await deleteCatalogTank(tank.id);
+      setTanks((prev) => prev.filter((t) => t.id !== tank.id));
+    } catch (err: unknown) {
+      setError(getAuthErrorMessage(err));
+    } finally {
+      setDeletingId(null);
+    }
+  }
 
   if (loading) return <p className="text-muted">Loading catalog entries…</p>;
   if (error) return <p className="text-red-600 dark:text-red-400">{error}</p>;
@@ -55,7 +81,7 @@ export function CatalogAdminList() {
         >
           <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border border-border bg-card-muted">
             {tank.thumbnail ? (
-              <Image
+              <RemoteImage
                 src={tank.thumbnail}
                 alt=""
                 fill
@@ -90,6 +116,14 @@ export function CatalogAdminList() {
             >
               View
             </Link>
+            <button
+              type="button"
+              disabled={deletingId === tank.id}
+              onClick={() => handleDelete(tank)}
+              className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-muted transition hover:border-red-500/50 hover:text-red-600 disabled:opacity-50 dark:hover:text-red-400"
+            >
+              {deletingId === tank.id ? "Removing…" : "Remove"}
+            </button>
           </div>
         </li>
       ))}

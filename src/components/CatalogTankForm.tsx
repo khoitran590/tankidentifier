@@ -8,6 +8,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { getAuthErrorMessage } from "@/lib/auth-errors";
 import {
   createCatalogTank,
+  deleteCatalogTank,
   updateCatalogTank,
   type CatalogTankPhotosInput,
 } from "@/lib/catalog-tanks";
@@ -32,6 +33,7 @@ export function CatalogTankForm({ mode, initial }: Props) {
   });
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   const onPhotosChange = useCallback((input: CatalogTankPhotosInput) => {
     setPhotos(input);
@@ -66,6 +68,33 @@ export function CatalogTankForm({ mode, initial }: Props) {
   }
 
   const isEdit = mode === "edit";
+
+  async function handleDelete() {
+    if (!initial) return;
+    if (
+      !confirm(
+        `Remove "${initial.name}" from the public catalog? This cannot be undone.`,
+      )
+    ) {
+      return;
+    }
+
+    setError(null);
+    setDeleting(true);
+    try {
+      await deleteCatalogTank(initial.id);
+      router.push("/admin/catalog");
+      router.refresh();
+    } catch (err: unknown) {
+      setError(
+        err instanceof Error && !("code" in (err as object))
+          ? err.message
+          : getAuthErrorMessage(err),
+      );
+    } finally {
+      setDeleting(false);
+    }
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
@@ -139,6 +168,24 @@ export function CatalogTankForm({ mode, initial }: Props) {
           Cancel
         </button>
       </div>
+
+      {isEdit && initial && (
+        <section className="rounded-xl border border-red-500/30 bg-red-500/5 p-6">
+          <h2 className="text-lg font-semibold text-heading">Remove from catalog</h2>
+          <p className="mt-1 text-sm text-muted">
+            Permanently deletes this tank from the public catalog. Uploaded photos in
+            Firebase Storage are removed; pasted external URLs are not affected.
+          </p>
+          <button
+            type="button"
+            disabled={deleting || submitting}
+            onClick={() => void handleDelete()}
+            className="mt-4 rounded-xl border border-red-500/50 px-6 py-3 text-sm font-semibold text-red-600 transition hover:bg-red-500/10 disabled:opacity-50 dark:text-red-400"
+          >
+            {deleting ? "Removing…" : "Remove tank"}
+          </button>
+        </section>
+      )}
     </form>
   );
 }

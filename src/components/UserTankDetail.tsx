@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { RemoteImage } from "@/components/RemoteImage";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
@@ -101,7 +101,7 @@ export function UserTankDetail({ tankId }: Props) {
     >
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-card-muted">
-          <Image
+          <RemoteImage
             src={tank.thumbnail}
             alt={tank.name}
             fill

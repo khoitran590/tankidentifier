@@ -1,15 +1,10 @@
 import type { NextConfig } from "next";
+import { getRemoteImagePatterns } from "./src/lib/remote-image";
 
 const nextConfig: NextConfig = {
   output: "standalone",
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "firebasestorage.googleapis.com",
-        pathname: "/**",
-      },
-    ],
+    remotePatterns: getRemoteImagePatterns(),
     formats: ["image/avif", "image/webp"],
     deviceSizes: [384, 640, 750, 828, 1080],
     imageSizes: [96, 128, 256, 384],

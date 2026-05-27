@@ -1,5 +1,6 @@
 import {
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
@@ -10,7 +11,7 @@ import {
   updateDoc,
   where,
 } from "firebase/firestore";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { deleteObject, getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { getAllTanks } from "@/lib/tanks";
 import { getFirestoreDb, getFirebaseStorage } from "@/lib/firebase";
 import type { Tank, TankSpecs } from "@/types/tank";
@@ -243,6 +244,31 @@ export async function updateCatalogTank(
     updatedAt: serverTimestamp(),
   });
   return { slug: existing.slug };
+}
+
+async function deleteCatalogTankStorage(tankId: string): Promise<void> {
+  const storage = getFirebaseStorage();
+  const folderRef = ref(storage, `catalog/${tankId}`);
+  try {
+    const listing = await listAll(folderRef);
+    await Promise.all(listing.items.map((item) => deleteObject(item)));
+    await Promise.all(
+      listing.prefixes.map(async (prefix) => {
+        const nested = await listAll(prefix);
+        await Promise.all(nested.items.map((item) => deleteObject(item)));
+      }),
+    );
+  } catch {
+    // Uploaded files may be absent if only external URLs were used.
+  }
+}
+
+export async function deleteCatalogTank(tankId: string): Promise<void> {
+  const existing = await getCatalogTankById(tankId);
+  if (!existing) throw new Error("Catalog tank not found.");
+
+  await deleteDoc(catalogDocRef(tankId));
+  await deleteCatalogTankStorage(tankId);
 }
 
 export function catalogTankEditPath(tankId: string): string {

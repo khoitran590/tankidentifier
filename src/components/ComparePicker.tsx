@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { RemoteImage } from "@/components/RemoteImage";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -45,7 +45,7 @@ function CompareSlot({ index, tank, active, onSelect, onRemove }: SlotProps) {
         }`}
       >
         <div className="relative aspect-[4/3] bg-card-muted">
-          <Image src={tank.thumbnail} alt={tank.name} fill className="object-cover" sizes="200px" />
+          <RemoteImage src={tank.thumbnail} alt={tank.name} fill className="object-cover" sizes="200px" />
           <span className="absolute left-2 top-2 rounded bg-background/90 px-2 py-0.5 text-xs font-medium text-accent">
             {index + 1}
           </span>

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { RemoteImage } from "@/components/RemoteImage";
 import { useState } from "react";
 import { getDisplayImages, getGalleryImages } from "@/lib/tank-media";
 import type { Tank } from "@/types/tank";
@@ -34,7 +34,7 @@ export function TankCardMedia({ tank, priority = false }: TankCardMediaProps) {
       onMouseEnter={() => hasAlt && setShowAlt(true)}
       onMouseLeave={() => setShowAlt(false)}
     >
-      <Image
+      <RemoteImage
         src={primary}
         alt={tank.name}
         fill
@@ -45,7 +45,7 @@ export function TankCardMedia({ tank, priority = false }: TankCardMediaProps) {
         priority={priority}
       />
       {hasAlt && (
-        <Image
+        <RemoteImage
           src={secondary}
           alt=""
           fill
@@ -61,7 +61,7 @@ export function TankCardMedia({ tank, priority = false }: TankCardMediaProps) {
           className="pointer-events-none absolute bottom-2 left-2 z-10 h-14 w-[4.5rem] overflow-hidden rounded-md border-2 border-background/90 shadow-md sm:hidden"
           aria-hidden
         >
-          <Image
+          <RemoteImage
             src={secondary}
             alt=""
             fill
@@ -98,7 +98,7 @@ export function TankGallery({ tank }: TankGalleryProps) {
   return (
     <div className="space-y-3">
       <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-card-muted dark:border-border-strong sm:aspect-[4/3]">
-        <Image
+        <RemoteImage
           src={activeSrc}
           alt={`${tank.name} — photo ${active + 1}`}
           fill
@@ -129,7 +129,7 @@ export function TankGallery({ tank }: TankGalleryProps) {
                     : "border-border-strong opacity-90 hover:border-accent/50 hover:opacity-100 dark:opacity-100"
                 }`}
               >
-                <Image src={src} alt="" fill className="object-cover" sizes={SIZES.thumb} />
+                <RemoteImage src={src} alt="" fill className="object-cover" sizes={SIZES.thumb} />
               </button>
             ))}
           </div>
@@ -158,7 +158,7 @@ export function TankThumbStrip({ tank, className = "" }: TankThumbStripProps) {
           key={`${i}-${src}`}
           className="relative h-14 w-20 shrink-0 overflow-hidden rounded-md border border-border"
         >
-          <Image src={src} alt="" fill className="object-cover" sizes={SIZES.thumb} />
+          <RemoteImage src={src} alt="" fill className="object-cover" sizes={SIZES.thumb} />
           <span className="sr-only">Photo {i + 1}</span>
         </div>
       ))}
