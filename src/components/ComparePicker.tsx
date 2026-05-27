@@ -270,7 +270,7 @@ export function ComparePicker() {
                     className="flex w-full items-center gap-3 px-4 py-3 text-left transition hover:bg-card-muted"
                   >
                     <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-md border border-border bg-card-muted">
-                      <Image
+                      <RemoteImage
                         src={tank.thumbnail}
                         alt=""
                         fill
